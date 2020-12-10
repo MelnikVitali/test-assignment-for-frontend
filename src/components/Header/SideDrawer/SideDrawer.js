@@ -1,41 +1,21 @@
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
+    Box,
     Drawer,
-    IconButton,
+    IconButton, Link,
     List,
     ListItem,
-    ListItemText
 } from '@material-ui/core';
 
-import { makeStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
-import MenuIcon from '@material-ui/icons/Menu';
 
 import { setIsDrawerOpen } from '../../../store/actions/mobileMenuActions';
 
-const drawerWidth = 240;
+import logo from "../../../assets/logo.svg";
 
-const useStyles = makeStyles(theme => ({
-    list: {
-        width: 250
-    },
-    linkText: {
-        textDecoration: `none`,
-        textTransform: `none`,
-        color: `#212529`,
-        '&:hover': {
-            color: theme.palette.primary.main
-        }
-    },
-    menuButton: {
-        // marginRight: theme.spacing(2),
-    },
-    drawerPaper: {
-        width: drawerWidth,
-    },
-}));
+import useStyles from './styles';
 
 const SideDrawer = ({ window }) => {
     const classes = useStyles();
@@ -54,60 +34,85 @@ const SideDrawer = ({ window }) => {
         dispatch(setIsDrawerOpen(open));
     };
 
-    const sideDrawerList =  (
+    const sideDrawerList = (
         <div
-            className={classes.list}
+            className={classes.drawerContainer}
             role="presentation"
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
+            <Link component='a'
+                  href="#"
+                  className={classes.logoLink}
+            >
+                <img src={logo} alt="TESTTASK" className={classes.logoImg} />
+            </Link >
             <Divider />
-            <List component="nav">
-                {firstDrawerList.map(({ title, path }, index) => (
-                    <a href={path} key={title} className={classes.linkText}>
-                        <ListItem>
-                            <ListItemText primary={title} />
-                        </ListItem>
-                     </a>
+            <List component="nav" className={classes.navList} >
+                {firstDrawerList.map(({ title, path }) => (
+                    <ListItem component='li'
+                              key={title}
+                              button
+                              className={classes.listItem}
+                    >
+                        <Link
+                            href={path}
+                            color='inherit'
+                        >
+                            {title}
+                        </Link >
+                    </ListItem >
                 ))}
-            </List>
+            </List >
             <Divider />
-            <List component="nav">
+            <List component="nav" className={classes.navList} >
                 {secondDrawerList.map(({ title, path }) => (
-                    <a href={path} key={title} className={classes.linkText}>
-                        <ListItem>
-                            <ListItemText primary={title} />
-                        </ListItem>
-                    </a>
+                    <ListItem component='li'
+                              key={title}
+                              button
+                              className={classes.listItem}
+                    >
+                        <Link
+                            href={path}
+                            color='inherit'
+                        >
+                            {title}
+                        </Link >
+                    </ListItem >
                 ))}
-            </List>
+            </List >
             <Divider />
-            <List component="nav">
+            <List component="nav" className={classes.navList} >
                 {thirdDrawerList.map(({ title, path }) => (
-                    <a href={path} key={title} className={classes.linkText}>
-                        <ListItem>
-                            <ListItemText primary={title} />
-                        </ListItem>
-                    </a>
+                    <ListItem component='li'
+                              button
+                              key={title}
+                              className={classes.listItem}
+                    >
+                        <Link
+                            href={path}
+                            color='inherit'
+                        >
+                            {title}
+                        </Link >
+                    </ListItem >
                 ))}
-            </List>
-        </div>
+            </List >
+        </div >
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <React.Fragment>
+        <>
             <IconButton
                 color="inherit"
                 aria-label="open drawer"
                 edge="start"
                 onClick={toggleDrawer(true)}
-                className={classes.menuButton}
             >
-                <MenuIcon />
-            </IconButton>
-
+                <Box component='div' className={classes.menuButton} />
+            </IconButton >
             <Drawer
                 container={container}
                 variant="temporary"
@@ -122,8 +127,8 @@ const SideDrawer = ({ window }) => {
                 }}
             >
                 {sideDrawerList}
-            </Drawer>
-        </React.Fragment>
+            </Drawer >
+        </ >
     );
 };
 

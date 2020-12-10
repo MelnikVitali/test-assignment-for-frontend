@@ -1,28 +1,17 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 
 import { pxToRem } from "./utils/pxToRem";
 
 import { OpenSansRegular, OpenSansSemiBold, PTSansRegular } from "./fonts";
 
-// Generate breakpoints so we can use them in the theme definition
-const breakpoints = createBreakpoints({});
-
-
 const theme = createMuiTheme({
     breakpoints: {
-        keys: [
-            'xs',
-            'sm',
-            'md',
-            'lg',
-            'xl' ],
         values: {
             xs: 0,
-            sm: 361,
-            md: 769,
-            lg: 11170,
-            xl: 2560,
+            sm: 480,
+            md: 768,
+            lg: 1024,
+            xl: 1920,
         },
     },
     typography: {
@@ -31,9 +20,9 @@ const theme = createMuiTheme({
             'sans-serif'
         ].join(','),
         secondaryFontFamily: [
-            'PT Sans, sans-serif'
+            'PT Sans',
+            'sans-serif'
         ].join(','),
-
     },
     palette: {
         primary: {
@@ -47,6 +36,7 @@ const theme = createMuiTheme({
     },
     backgroundColor: '#fff',
     backgroundColor2: '#f9f9f3',
+    mobileMenuTextColor: '#000000',
     overrides: {
         MuiCssBaseline: {
             '@global': {
@@ -54,8 +44,8 @@ const theme = createMuiTheme({
                     OpenSansRegular,
                     OpenSansSemiBold,
                     PTSansRegular
-                ],
-                html: {
+                ].join(','),
+                'html, body': {
                     outline: 'none'
                 },
                 body: {
@@ -63,10 +53,6 @@ const theme = createMuiTheme({
                     backgroundColor: '#fff',
                     fontSize: pxToRem(16),
                     color: '#212529',
-                    outline: 'none'
-                },
-                'html, body': {
-                    outline: 'none'
                 },
                 '#root': {
                     width: '100%',
@@ -87,15 +73,22 @@ const theme = createMuiTheme({
             },
         },
         MuiTypography: {},
+        MuiDrawer:{
+            paper:{
+                overflow: "hidden",
+            }
+        },
         MuiToolbar: {
             regular: {
-                [breakpoints.up("xs")]: {
-                    minHeight: pxToRem(61)
-                },
-
+                minHeight: `${pxToRem(41)} !important`,
+                height: 'inherit'
             },
-
         },
+        MuiListItem: {
+            gutters: {
+                padding: '0 !important'
+            }
+        }
     },
 });
 
