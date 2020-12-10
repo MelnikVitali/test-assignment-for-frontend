@@ -7,10 +7,10 @@ const TestAssignment = () => {
     const classes = useStyles();
 
     return (
-        <Container component='section' maxWidth={false} className={classes.root}  >
-            <div>
+        <Container component='section' maxWidth={false} className={classes.root} >
+            <div >
 
-            </div>
+            </div >
         </Container >
     );
 };

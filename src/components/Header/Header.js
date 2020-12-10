@@ -7,7 +7,7 @@ import {
     Toolbar,
     List,
     Hidden,
-    Link
+    Link, ListItem
 } from '@material-ui/core';
 
 import logo from '../../assets/logo.svg';
@@ -44,30 +44,33 @@ const Header = () => {
                 >
                     <img src={logo} alt="TESTTASK" className={classes.logoImg} />
                 </Link >
-                <Hidden smDown >
+                <Hidden mdDown >
                     <List
                         component="nav"
                         aria-labelledby="main navigation"
                         className={classes.navList}
                     >
                         {navLinks.map(({ title, path }, index) => (
-                            <Link
-                                href={path}
+                            <ListItem
+                                component='li'
                                 key={title}
-                                color='inherit'
+                                button
                                 className={[
-                                    classes.navLink,
+                                    classes.listItem,
                                     selectedIndex === index ? classes.selected : ''
-                                ].join(' ')}
-                                onClick={(event) => handleListItemClick(event, index)}
-                            >
-                                {title}
-                            </Link >
-
+                                ].join(' ')} >
+                                <Link
+                                    href={path}
+                                    color='inherit'
+                                    onClick={(event) => handleListItemClick(event, index)}
+                                >
+                                    {title}
+                                </Link >
+                            </ListItem >
                         ))}
                     </List >
                 </Hidden >
-                <Hidden mdUp >
+                <Hidden lgUp >
                     <SideDrawer implementation="css" />
                 </Hidden >
             </Toolbar >

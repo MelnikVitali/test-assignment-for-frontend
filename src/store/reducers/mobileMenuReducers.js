@@ -6,7 +6,7 @@ const initialState = {
         { title: `About me`, path: `#sign-up` },
         { title: `Relationships`, path: `#sign-up` },
         { title: `Users`, path: `#sign-up` },
-        { title: `Sign up`, path: `#sign-up` },
+        { title: `Sign Up`, path: `#sign-up` },
         { title: `Terms and Conditions`, path: `#sign-up` },
     ],
     secondDrawerList: [
