@@ -13,7 +13,7 @@ import Divider from '@material-ui/core/Divider';
 
 import { setIsDrawerOpen } from '../../../store/actions/mobileMenuActions';
 
-import logo from "../../../assets/logo.svg";
+import logo from '../../../assets/logo.svg';
 
 import useStyles from './styles';
 
@@ -21,10 +21,13 @@ const SideDrawer = ({ window }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    const firstDrawerList = useSelector(state => state.mobileMenuReducers.firstDrawerList);
-    const secondDrawerList = useSelector(state => state.mobileMenuReducers.secondDrawerList);
-    const thirdDrawerList = useSelector(state => state.mobileMenuReducers.thirdDrawerList);
     const isDrawerOpen = useSelector(state => state.mobileMenuReducers.isDrawerOpen);
+    const {
+        firstDrawerList,
+        secondDrawerList,
+        thirdDrawerList
+    }
+        = useSelector(state => state.mobileMenuReducers.mobileNavLinks);
 
     const toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {

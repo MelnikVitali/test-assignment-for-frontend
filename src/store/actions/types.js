@@ -1,3 +1,4 @@
 export const GET_NAV_LINKS = 'GET_NAV_LINKS';
-export const GET_MOBILE_MENU = 'GET_MOBILE_MENU';
+export const GET_MOBILE_NAV_LINKS = 'GET_MOBILE_NAV_LINKS';
 export const IS_DRAWER_OPEN = 'IS_DRAWER_OPEN';
+export const GET_SUBTITLE_IN_H1 ='GET_SUBTITLE_IN_H1';

@@ -1,14 +1,14 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-import { pxToRem } from "./utils/pxToRem";
+import { pxToRem } from './utils/pxToRem';
 
-import { OpenSansRegular, OpenSansSemiBold, PTSansRegular } from "./fonts";
+import { OpenSansRegular, OpenSansSemiBold, PTSansRegular } from './fonts';
 
 const theme = createMuiTheme({
     breakpoints: {
         values: {
             xs: 0,
-            sm: 480,
+            sm: 600,
             md: 768,
             lg: 1024,
             xl: 1920,
@@ -33,6 +33,9 @@ const theme = createMuiTheme({
             main: '#007bff',
             contrastText: '#4c4b4b',
         },
+        textPrimary: {
+            main: '#ffffff'
+        }
     },
     backgroundColor: '#fff',
     backgroundColor2: '#f9f9f3',
@@ -72,10 +75,33 @@ const theme = createMuiTheme({
                 }
             },
         },
-        MuiTypography: {},
-        MuiDrawer:{
-            paper:{
-                overflow: "hidden",
+        MuiTypography: {
+            h1: {
+                fontSize: pxToRem(30),
+                color: '#fff',
+                fontWeight: 400,
+                lineHeight: pxToRem(34),
+                letterSpacing: pxToRem(-0.3),
+                textTransform: 'uppercase',
+            },
+            h2: {
+                fontSize: pxToRem(50),
+                color: '#212529',
+                fontWeight: 400,
+                lineHeight: pxToRem(50),
+                letterSpacing: pxToRem(-1),
+                wordSpacing: pxToRem(2.5)
+            },
+            subtitle1: {
+                fontSize: pxToRem(16),
+                color: '#fff',
+                fontWeight: 400,
+                lineHeight: pxToRem(24),
+            },
+        },
+        MuiDrawer: {
+            paper: {
+                overflow: 'hidden',
             }
         },
         MuiToolbar: {
@@ -87,6 +113,17 @@ const theme = createMuiTheme({
         MuiListItem: {
             gutters: {
                 padding: '0 !important'
+            }
+        },
+        MuiButton: {
+            root: {
+                textTransform: 'none',
+                fontSize: pxToRem(16),
+                fontWeight: 600,
+                padding: `${pxToRem(4.5)} ${pxToRem(58.5)}`,
+            },
+            containedPrimary: {
+                color: '#fefefe'
             }
         }
     },
