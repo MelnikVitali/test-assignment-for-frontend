@@ -11,7 +11,6 @@ import theme from './theme';
 
 import store from './store';
 
-
 ReactDOM.render(
     <ThemeProvider theme={theme} >
         <Provider store={store} >

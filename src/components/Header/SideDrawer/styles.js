@@ -1,8 +1,8 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
-import { pxToRem } from "../../../utils/pxToRem";
+import { pxToRem } from '../../../utils/pxToRem';
 
-import menuIcon from '../../../assets/menu-icon.svg'
+import menuIcon from '../../../assets/menu-icon.svg';
 
 
 const useStyles = makeStyles(theme => ({
