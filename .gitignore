@@ -6,6 +6,7 @@
 .pnp.js
 .idea
 .log
+.lock
 
 # testing
 /coverage
