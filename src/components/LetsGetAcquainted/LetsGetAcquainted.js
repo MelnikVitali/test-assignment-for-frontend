@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useStyles from './styles';
-import { Box, Button, CardMedia, Container, Grid, Typography } from '@material-ui/core';
+import { Button, CardMedia, Container, Grid, Typography } from '@material-ui/core';
 
 import manLaptopImg from '../../assets/man-laptop-v1.svg';
 
