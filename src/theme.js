@@ -39,6 +39,7 @@ const theme = createMuiTheme({
     },
     backgroundColor: '#fff',
     backgroundColor2: '#f9f9f3',
+    backgroundColorLoadingImage: '#23304A',
     mobileMenuTextColor: '#000000',
     overrides: {
         MuiCssBaseline: {
@@ -92,12 +93,24 @@ const theme = createMuiTheme({
                 letterSpacing: pxToRem(-1),
                 wordSpacing: pxToRem(2.5)
             },
+            h3:{
+                fontSize: pxToRem(24),
+                color: '#212529',
+                fontWeight: 400,
+                lineHeight: pxToRem(30),
+            },
             subtitle1: {
                 fontSize: pxToRem(16),
                 color: '#fff',
                 fontWeight: 400,
                 lineHeight: pxToRem(24),
             },
+            body1:{
+                fontSize: pxToRem(16),
+                color: '#4c4b4b',
+                fontWeight: 400,
+                lineHeight: pxToRem(24),
+            }
         },
         MuiDrawer: {
             paper: {

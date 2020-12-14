@@ -2,14 +2,14 @@ import React from 'react';
 
 import Header from '../Header';
 import TestAssignment from '../TestAssignment';
-import GetAcquainted from '../GetAcquainted/GetAcquainted';
+import LetsGetAcquainted from '../LetsGetAcquainted/LetsGetAcquainted';
 
 const App = () => {
     return (
         <>
             <Header />
             <TestAssignment />
-            <GetAcquainted />
+            <LetsGetAcquainted />
         </>
     );
 };
