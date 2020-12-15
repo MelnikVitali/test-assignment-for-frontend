@@ -16,7 +16,7 @@ const LetsGetAcquainted = () => {
             <Typography component='h2' variant='h2' className={classes.titleH2} >
                 Let's get acquainted
             </Typography >
-            <Grid container wrap='nowrap' className={classes.gridContainer} >
+            <Grid container className={classes.gridContainer} >
                 <Grid item >
                     <img src={manLaptopImg} alt='man with laptop' className={classes.img} />
                 </Grid >
