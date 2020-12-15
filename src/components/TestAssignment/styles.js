@@ -13,9 +13,6 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'center',
         [theme.breakpoints.up('sm')]: {
             padding: `${pxToRem(59)} ${pxToRem(30)} ${pxToRem(66)}`,
-            // backgroundSize: '100% 120%',
-            // backgroundPosition: 'unset',
-            // '@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx)': {}
         },
         [theme.breakpoints.up('md')]: {
             display: 'block',
@@ -38,7 +35,7 @@ const useStyles = makeStyles(theme => ({
             maxWidth: pxToRem(420),
             fontSize: pxToRem(40),
             lineHeight: pxToRem(44),
-            letterSpacing: pxToRem(-0.3),
+            letterSpacing: pxToRem(-0.4),
         },
         [theme.breakpoints.up('lg')]: {
             maxWidth: pxToRem(510),

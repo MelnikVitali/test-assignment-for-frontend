@@ -86,12 +86,12 @@ const theme = createMuiTheme({
                 textTransform: 'uppercase',
             },
             h2: {
-                fontSize: pxToRem(50),
+                fontSize: pxToRem(30),
                 color: '#212529',
                 fontWeight: 400,
                 lineHeight: pxToRem(50),
-                letterSpacing: pxToRem(-1),
-                wordSpacing: pxToRem(2.5)
+                letterSpacing: pxToRem(-0.5),
+                wordSpacing: pxToRem(2)
             },
             h3:{
                 fontSize: pxToRem(24),
