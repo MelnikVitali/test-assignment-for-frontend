@@ -16,7 +16,6 @@ import SideDrawer from './SideDrawer';
 
 import useStyles from './styles';
 
-
 const Header = () => {
     const classes = useStyles();
 
