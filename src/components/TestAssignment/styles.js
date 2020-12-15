@@ -1,42 +1,34 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-import bgImage from '../../assets/banner-photo.jpg';
-
 import { pxToRem } from '../../utils/pxToRem';
 
 const useStyles = makeStyles(theme => ({
     root: {
+        position: 'relative',
         overflow: 'hidden',
         padding: `${pxToRem(70)} ${pxToRem(16)} ${pxToRem(75)}`,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        backgroundImage: `url(${bgImage})`,
-        /* Set a background color that will be displayed
-           while the background image is loading */
-        backgroundColor: theme.palette.backgroundColorLoadingImage,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: '52% 100%',
         textAlign: 'center',
         [theme.breakpoints.up('sm')]: {
             padding: `${pxToRem(59)} ${pxToRem(30)} ${pxToRem(66)}`,
-            backgroundSize: '100% 120%',
-            backgroundPosition: 'unset',
+            // backgroundSize: '100% 120%',
+            // backgroundPosition: 'unset',
+            // '@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx)': {}
         },
         [theme.breakpoints.up('md')]: {
             display: 'block',
             padding: `${pxToRem(59)} ${pxToRem(30)} ${pxToRem(66)}`,
-            backgroundSize: '134% 120%',
-            backgroundPosition: 'unset',
             textAlign: 'left',
         },
         [theme.breakpoints.up('lg')]: {
             padding: `${pxToRem(106)} ${pxToRem(30)} ${pxToRem(115)}`,
-            backgroundSize: '100%',
-            backgroundPosition: 'center',
             // backgroundSize: '100% auto'
         },
+    },
+    boxContent: {
+        zIndex: 2
     },
     title: {
         margin: `0 ${pxToRem(11)}`,
