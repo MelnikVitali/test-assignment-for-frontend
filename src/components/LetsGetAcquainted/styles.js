@@ -51,10 +51,10 @@ const useStales = makeStyles(theme => ({
     gridItemContent: {
         [theme.breakpoints.up('md')]: {
             textAlign: 'left',
-            marginLeft: 30,
+            marginLeft: '30px !important',
         },
         [theme.breakpoints.up('lg')]: {
-            marginLeft: 49,
+            marginLeft: '49px !important',
         }
     },
     img: {
