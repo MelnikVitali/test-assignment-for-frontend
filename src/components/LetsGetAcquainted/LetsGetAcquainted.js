@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useStyles from './styles';
-import { Button, CardMedia, Container, Grid, Typography } from '@material-ui/core';
+import { Button, Container, Grid, Typography } from '@material-ui/core';
 
 import manLaptopImg from '../../assets/man-laptop-v1.svg';
 
@@ -16,11 +16,11 @@ const LetsGetAcquainted = () => {
             <Typography component='h2' variant='h2' className={classes.titleH2} >
                 Let's get acquainted
             </Typography >
-            <Grid container className={classes.gridContainer} >
+            <Grid container wrap='nowrap' className={classes.gridContainer} >
                 <Grid item >
                     <img src={manLaptopImg} alt='man with laptop' className={classes.img} />
                 </Grid >
-                <Grid item className={classes.content} >
+                <Grid item className={classes.gridItemContent} >
                     <Typography component='h3' variant='h3' className={classes.titleH3} >
                         I am cool frontend developer
                     </Typography >
