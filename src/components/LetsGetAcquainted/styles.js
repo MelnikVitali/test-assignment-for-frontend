@@ -8,9 +8,12 @@ const useStales = makeStyles(theme => ({
         marginBottom: 60,
         padding: '0 14px',
         textAlign: 'center',
+        [theme.breakpoints.up('sm')]: {
+            padding:'0 22px'
+        },
         [theme.breakpoints.up('md')]: {
             marginBottom: 110,
-            padding:'0 30px'
+
         },
         [theme.breakpoints.up('lg')]: {
             marginBottom: 150,
@@ -34,6 +37,7 @@ const useStales = makeStyles(theme => ({
         }
     },
     gridContainer: {
+        flexWrap:'wrap',
         justifyContent: 'center',
         [theme.breakpoints.up('md')]: {
             flexWrap: 'nowrap',
@@ -44,7 +48,7 @@ const useStales = makeStyles(theme => ({
             textAlign: 'left'
         }
     },
-    content: {
+    gridItemContent: {
         [theme.breakpoints.up('md')]: {
             textAlign: 'left',
             marginLeft: 30,
