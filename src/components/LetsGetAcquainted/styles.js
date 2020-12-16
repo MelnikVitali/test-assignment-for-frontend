@@ -9,7 +9,7 @@ const useStales = makeStyles(theme => ({
         padding: '0 14px',
         textAlign: 'center',
         [theme.breakpoints.up('sm')]: {
-            padding:'0 22px'
+            padding:'0 30px'
         },
         [theme.breakpoints.up('md')]: {
             marginBottom: 110,
@@ -17,7 +17,6 @@ const useStales = makeStyles(theme => ({
         },
         [theme.breakpoints.up('lg')]: {
             marginBottom: 150,
-            padding:'0 30px'
         }
 
     },
