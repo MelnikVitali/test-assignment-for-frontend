@@ -1,38 +1,34 @@
 import { makeStyles } from '@material-ui/core';
+import { pxToRem } from '../../../utils/pxToRem';
 
 const useStyles = makeStyles(theme => ({
-    card: {
-        maxWidth: 300,
-        margin: 'auto',
-        transition: '0.3s',
-        boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
-        '&:hover': {
-            boxShadow: '0 16px 70px -12.125px rgba(0,0,0,0.3)'
-        }
+    gridItem: {
+        width: 200,
+        marginBottom: 0,
+        [theme.breakpoints.up('md')]: {
+            marginBottom: pxToRem(50),
+        },
+        [theme.breakpoints.up('lg')]: {
+            marginBottom: pxToRem(72),
+        },
     },
-    media: {
-        paddingTop: '56.25%',
+    userPhoto: {
+        borderRadius: '50%',
+        width: pxToRem(70),
+        marginBottom: pxToRem(10)
     },
-    content: {
-        textAlign: 'left',
-        padding: theme.spacing.unit * 3
+    userName: {
+        wordBreak: 'break-word',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        marginBottom: pxToRem(10)
     },
-    divider: {
-        margin: `${theme.spacing.unit * 3}px 0`
+    userEmail: {
+        wordWrap: 'normal',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        cursor: 'pointer'
     },
-    heading: {
-        fontWeight: 'bold'
-    },
-    subheading: {
-        lineHeight: 1.8
-    },
-    avatar: {
-        display: 'inline-block',
-        border: '2px solid white',
-        '&:not(:first-of-type)': {
-            marginLeft: -theme.spacing.unit
-        }
-    }
 }));
 
 export default useStyles;

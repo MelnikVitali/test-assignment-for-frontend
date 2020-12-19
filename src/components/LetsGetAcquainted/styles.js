@@ -41,14 +41,19 @@ const useStales = makeStyles(theme => ({
             flexWrap: 'nowrap',
             textAlign: 'left'
         },
+        [theme.breakpoints.up('lg')]: {
+            flexWrap: 'nowrap',
+            textAlign: 'left'
+        },
+
     },
     gridItemContent: {
         [theme.breakpoints.up('md')]: {
             textAlign: 'left',
-            marginLeft: pxToRem(30),
+            marginLeft: `${pxToRem(30)} !important`,
         },
         [theme.breakpoints.up('lg')]: {
-            marginLeft: pxToRem(49),
+            marginLeft: `${pxToRem(49)} !important`,
         }
     },
     img: {
@@ -87,7 +92,7 @@ const useStales = makeStyles(theme => ({
     },
     btn: {
         padding: `${pxToRem(2)} 0 ${pxToRem(0)}`,
-        '&:hover':{
+        '&:hover': {
             color: theme.palette.primary.mainHover
         }
     },
