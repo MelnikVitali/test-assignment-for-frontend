@@ -8,6 +8,10 @@ import manLaptopImg from '../../assets/man-laptop-v1.svg';
 const LetsGetAcquainted = () => {
     const classes = useStyles();
 
+    const handleClick = () =>{
+        console.log(window.innerWidth);
+    }
+
     return (
         <Container
             component='section'
@@ -33,7 +37,11 @@ const LetsGetAcquainted = () => {
                         bonus points. If you use any task runner (gulp/webpack) you will get bonus points as well. Slice
                         service directory page P​SD mockup​ into HTML5/CSS3.
                     </Typography >
-                    <Button href='#sign-up' color='primary' className={classes.btn} >
+                    <Button
+                        href='#sign-up'
+                        color='primary'
+                        className={classes.btn}
+                        onClick={handleClick} >
                         Sing up now
                     </Button >
 
