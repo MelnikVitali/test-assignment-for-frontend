@@ -1,52 +1,69 @@
 import React from 'react';
 
-import useStales from '../../LetsGetAcquainted/styles';
-import { Avatar, Card, CardContent, CardMedia, Typography } from '@material-ui/core';
-import Divider from '@material-ui/core/Divider';
+import { Grid, Link, Tooltip, Typography } from '@material-ui/core';
 
-const User = () => {
+import defaultAvatar from '../../../assets/avatar.svg';
+
+import useStales from './styles';
+
+const User = ({ user }) => {
     const classes = useStales();
-
-    const faces = [
-        "http://i.pravatar.cc/300?img=1",
-        "http://i.pravatar.cc/300?img=2",
-        "http://i.pravatar.cc/300?img=3",
-        "http://i.pravatar.cc/300?img=4"
-    ];
 
     return (
         <>
-            <Card className={classes.card}>
-                <CardMedia
-                    className={classes.media}
-                    image={
-                        "https://image.freepik.com/free-photo/river-foggy-mountains-landscape_1204-511.jpg"
-                    }
+            <Grid
+                item
+                key={user.id}
+                md={4}
+                xs={12}
+                sm={6}
+                className={classes.gridItem}
+            >
+                <img
+                    className={classes.userPhoto}
+                    src={user.photo}
+                    alt={user.name}
+                    onError={e => {
+                        e.target.src = defaultAvatar;
+                    }}
                 />
-                <CardContent className={classes.content}>
+                <Typography
+                    component='h3'
+                    variant='h3'
+                    className={classes.userName}
+                >
+                    {user.name}
+                </Typography >
+                <Typography
+                    component='p'
+                    variant='body1'
+                    className={classes.userPosition}
+                >
+                    {user.position}
+                </Typography >
+                <Link href={`mailto:${user.email}`} >
+                    <Tooltip title={user.email} >
+                        <Typography
+                            component='p'
+                            variant='body1'
+                            className={classes.userEmail}
+                        >
+                            {user.email}
+                        </Typography >
+                    </Tooltip >
+                </Link >
+                <Link href={`tel:${user.phone}`} >
                     <Typography
-                        className={"MuiTypography--heading"}
-                        variant={"h6"}
-                        gutterBottom
+                        component='p'
+                        variant='body1'
+                        className={classes.userPhone}
                     >
-                        Nature Around Us
-                    </Typography>
-                    <Typography
-                        className={"MuiTypography--subheading"}
-                        variant={"caption"}
-                    >
-                        We are going to learn different kinds of species in nature that live
-                        together to form amazing environment.
-                    </Typography>
-                    <Divider className={classes.divider} light />
-                    {faces.map(face => (
-                        <Avatar className={classes.avatar} key={face} src={face} />
-                    ))}
-                </CardContent>
-            </Card>
+                        {user.phone}
+                    </Typography >
+                </Link >
+            </Grid >
         </ >
     );
 };
 
 export default User;
-

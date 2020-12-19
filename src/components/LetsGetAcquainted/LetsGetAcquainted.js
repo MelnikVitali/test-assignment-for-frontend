@@ -8,9 +8,9 @@ import manLaptopImg from '../../assets/man-laptop-v1.svg';
 const LetsGetAcquainted = () => {
     const classes = useStyles();
 
-    const handleClick = () =>{
+    const handleClick = () => {
         console.log(window.innerWidth);
-    }
+    };
 
     return (
         <Container
