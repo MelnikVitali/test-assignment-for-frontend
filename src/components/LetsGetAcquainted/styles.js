@@ -38,11 +38,11 @@ const useStales = makeStyles(theme => ({
         flexWrap: 'wrap',
         justifyContent: 'center',
         [theme.breakpoints.up('md')]: {
-            flexWrap: 'nowrap',
+            flexWrap: 'nowrap !important',
             textAlign: 'left'
         },
         [theme.breakpoints.up('lg')]: {
-            flexWrap: 'nowrap',
+            flexWrap: 'nowrap !important',
             textAlign: 'left'
         },
 
