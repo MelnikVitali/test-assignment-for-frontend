@@ -14,6 +14,7 @@ const theme = createMuiTheme({
             xl: 1920,
         },
     },
+    spacing: 6,
     typography: {
         fontFamily: [
             'Open Sans',
@@ -27,6 +28,7 @@ const theme = createMuiTheme({
     palette: {
         primary: {
             main: '#ef5b4c',
+            mainHover:'#D24335',
             contrastText: '#212529',
         },
         secondary: {
@@ -90,14 +92,19 @@ const theme = createMuiTheme({
                 color: '#212529',
                 fontWeight: 400,
                 lineHeight: pxToRem(50),
-                letterSpacing: pxToRem(-0.5),
-                wordSpacing: pxToRem(2)
+
             },
             h3:{
                 fontSize: pxToRem(24),
                 color: '#212529',
                 fontWeight: 400,
                 lineHeight: pxToRem(30),
+            },
+            h4:{
+                fontSize: pxToRem(16),
+                color: '#212529',
+                fontWeight: 400,
+                lineHeight: pxToRem(22),
             },
             subtitle1: {
                 fontSize: pxToRem(16),
@@ -126,7 +133,7 @@ const theme = createMuiTheme({
         MuiListItem: {
             gutters: {
                 padding: '0 !important'
-            }
+            },
         },
         MuiButton: {
             root: {
@@ -137,6 +144,11 @@ const theme = createMuiTheme({
             },
             containedPrimary: {
                 color: '#fefefe'
+            },
+            textPrimary:{
+                '&:hover':{
+                    backgroundColor: 'transparent'
+                }
             }
         }
     },

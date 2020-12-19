@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../Header';
 import TestAssignment from '../TestAssignment';
 import LetsGetAcquainted from '../LetsGetAcquainted/LetsGetAcquainted';
+import OurCheerfulUsers from '../OurCheerfulUsers';
 
 const App = () => {
     return (
@@ -10,6 +11,7 @@ const App = () => {
             <Header />
             <TestAssignment />
             <LetsGetAcquainted />
+            <OurCheerfulUsers />
         </>
     );
 };

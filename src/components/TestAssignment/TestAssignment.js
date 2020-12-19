@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { Box, Button, Container, Hidden, Typography } from '@material-ui/core';
 
-import useStyles from './styles';
 import ResponsiveBanner from './ResponsiveBanner';
+
+import useStyles from './styles';
 
 const TestAssignment = () => {
     const classes = useStyles();
