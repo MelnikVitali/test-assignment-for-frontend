@@ -3,14 +3,17 @@ import { pxToRem } from '../../../utils/pxToRem';
 
 const useStyles = makeStyles(theme => ({
     gridItem: {
-        width: 200,
-        marginBottom: 0,
+        marginBottom: pxToRem(35),
         [theme.breakpoints.up('md')]: {
-            marginBottom: pxToRem(50),
+            marginBottom: pxToRem(56),
         },
         [theme.breakpoints.up('lg')]: {
-            marginBottom: pxToRem(72),
+            marginBottom: pxToRem(50),
         },
+    },
+    userContent: {
+        width: pxToRem(216),
+        margin: '0 auto'
     },
     userPhoto: {
         borderRadius: '50%',

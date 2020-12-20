@@ -56,7 +56,7 @@ const OurCheerfulUsers = React.memo(() => {
                 </Typography >
                 <Grid
                     container
-                    spacing={10}
+                    // spacing={10}
                     justify="center"
                     className={classes.gridContainer}
                 >
