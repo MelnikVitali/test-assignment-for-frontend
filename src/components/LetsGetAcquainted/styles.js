@@ -41,11 +41,6 @@ const useStales = makeStyles(theme => ({
             flexWrap: 'nowrap !important',
             textAlign: 'left'
         },
-        [theme.breakpoints.up('lg')]: {
-            flexWrap: 'nowrap !important',
-            textAlign: 'left'
-        },
-
     },
     gridItemContent: {
         [theme.breakpoints.up('md')]: {
