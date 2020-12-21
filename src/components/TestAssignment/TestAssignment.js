@@ -1,7 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import { Box, Button, Container, Hidden, Typography } from '@material-ui/core';
+
+import subtitleInH1 from '../../constans/subtitleInH1';
 
 import ResponsiveBanner from './ResponsiveBanner';
 
@@ -10,8 +11,7 @@ import useStyles from './styles';
 const TestAssignment = () => {
     const classes = useStyles();
 
-    const subtitleTabletUp = useSelector(state => state.subtitleInH1Reducer.subtitleTabletUp);
-    const subtitleMobile = useSelector(state => state.subtitleInH1Reducer.subtitleMobile);
+    const { subtitleMobile, subtitleTabletUp } = subtitleInH1;
 
     return (
         <Container

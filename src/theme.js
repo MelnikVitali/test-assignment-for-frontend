@@ -150,6 +150,20 @@ const theme = createMuiTheme({
                     backgroundColor: 'transparent'
                 }
             }
+        },
+        MuiInputLabel:{
+            root:{
+                fontSize: 18,
+                color: '#212529',
+                 '&.Mui-focused':{
+                    color: '#212529'
+                 }
+            }
+        },
+        MuiFormHelperText:{
+            root:{
+                color:'#ef5b4c'
+            }
         }
     },
 });
