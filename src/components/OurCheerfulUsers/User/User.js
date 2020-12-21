@@ -19,7 +19,9 @@ const User = ({ user }) => {
                 sm={6}
                 className={classes.gridItem}
             >
-                <Box component='div' className={classes.userContent} >
+                <Box component='div' className={classes.userContent} data-aos="fade-up"
+                     data-aos-duration="400"
+                     data-aos-once>
                     <img
                         className={classes.userPhoto}
                         src={user.photo}

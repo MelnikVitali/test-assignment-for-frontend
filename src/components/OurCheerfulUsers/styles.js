@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
         },
     },
     btn: {
-        padding: `${pxToRem(4.5)} ${pxToRem(61)}`,
+        padding: `${pxToRem(4)} ${pxToRem(61)}`,
         marginBottom: pxToRem(80),
         [theme.breakpoints.up('md')]: {
             marginBottom: pxToRem(122),
@@ -45,7 +45,11 @@ const useStyles = makeStyles(theme => ({
             marginTop: 0,
             marginBottom: pxToRem(161),
         },
+    },
+    preloader:{
+        marginBottom: pxToRem(25)
     }
+
 }));
 
 export default useStyles;

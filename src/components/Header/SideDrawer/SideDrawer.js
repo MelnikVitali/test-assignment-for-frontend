@@ -1,5 +1,4 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
 
 import {
     Box,
@@ -11,7 +10,7 @@ import {
 
 import Divider from '@material-ui/core/Divider';
 
-import { setIsDrawerOpen } from '../../../store/actions/mobileMenuActions';
+import mobileNavLinks from '../../../constans/mobileNavLinks';
 
 import logo from '../../../assets/logo.svg';
 
@@ -19,22 +18,22 @@ import useStyles from './styles';
 
 const SideDrawer = ({ window }) => {
     const classes = useStyles();
-    const dispatch = useDispatch();
 
-    const isDrawerOpen = useSelector(state => state.mobileMenuReducers.isDrawerOpen);
+    const [ drawerOpen, setDrawerOpen ] = useState(false);
+
     const {
         firstDrawerList,
         secondDrawerList,
         thirdDrawerList
     }
-        = useSelector(state => state.mobileMenuReducers.mobileNavLinks);
+        = mobileNavLinks;
 
     const toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
-
-        dispatch(setIsDrawerOpen(open));
+        console.log(firstDrawerList);
+        setDrawerOpen(open);
     };
 
     const sideDrawerList = (
@@ -120,11 +119,8 @@ const SideDrawer = ({ window }) => {
                 container={container}
                 variant="temporary"
                 anchor='left'
-                open={isDrawerOpen}
+                open={drawerOpen}
                 onClose={toggleDrawer(false)}
-                classes={{
-                    paper: classes.drawerPaper,
-                }}
                 ModalProps={{
                     keepMounted: true, // Better open performance on mobile.
                 }}

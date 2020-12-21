@@ -28,7 +28,7 @@ const useStales = makeStyles(theme => ({
             wordSpacing: pxToRem(1)
         },
         [theme.breakpoints.up('lg')]: {
-            padding: `${pxToRem(154)} 0 ${pxToRem(75)}`,
+            padding: `${pxToRem(154)} 0 ${pxToRem(68)}`,
             fontSize: pxToRem(50),
             letterSpacing: pxToRem(-1),
             wordSpacing: pxToRem(2.5)
@@ -61,7 +61,8 @@ const useStales = makeStyles(theme => ({
         [theme.breakpoints.up('lg')]: {
             width: pxToRem(340),
             height: pxToRem(285),
-            marginLeft: pxToRem(25)
+            marginLeft: pxToRem(25),
+            marginTop: pxToRem(4)
         }
     },
     titleH3: {
@@ -73,13 +74,13 @@ const useStales = makeStyles(theme => ({
             textAlign: 'left',
         },
         [theme.breakpoints.up('lg')]: {
-            margin: `${pxToRem(-6)} 0 ${pxToRem(20)}`,
+            margin: `0 0 ${pxToRem(18)}`,
             textAlign: 'left',
         }
     },
     textBlock: {
         letterSpacing: pxToRem(-0.097),
-        marginBottom: pxToRem(24),
+        marginBottom: pxToRem(25),
         textAlign: 'justify',
         [theme.breakpoints.up('lg')]: {
             letterSpacing: pxToRem(-0.03),

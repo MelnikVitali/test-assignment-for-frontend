@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import {
     AppBar,
@@ -12,14 +11,14 @@ import {
 
 import logo from '../../assets/logo.svg';
 
+import navLinks from '../../constans/navLinks';
+
 import SideDrawer from './SideDrawer';
 
 import useStyles from './styles';
 
 const Header = () => {
     const classes = useStyles();
-
-    const navLinks = useSelector(state => state.navLinksReducer.navLinks);
 
     const [ selectedIndex, setSelectedIndex ] = useState(null);
 
