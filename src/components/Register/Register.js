@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useStyles from './styles';
-import { Container, Grid, Typography } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 import FormRegister from './FormRegister';
 
 const Register = () => {

@@ -1,7 +1,7 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { fade, makeStyles } from '@material-ui/core/styles';
+
 import { pxToRem } from '../../../utils/pxToRem';
 
-// import { pxToRem } from '../../utils/pxToRem';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -10,12 +10,35 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
+        width:pxToRem(466),
+        color: theme.formRegisterColor,
+
     },
     formControl: {
-        marginBottom:24
+        position: 'relative',
+        width:'100%',
+        paddingBottom: 24,
+        '&:nth-of-type(3)': {
+            letterSpacing: pxToRem(0.27),
+        },
     },
-    errorText:{
-        color:'#db3445'
+    label: {
+        fontSize: pxToRem(21),
+        fontWeight: 400,
+        '&:last-child': {}
+    },
+    helperText: {
+        position: 'absolute',
+        bottom: pxToRem(-1),
+        fontFamily: theme.typography.secondaryFontFamily,
+        color: '#6c757d',
+        fontSize: pxToRem(13),
+        wordSpacing: pxToRem(-1),
+        letterSpacing: pxToRem(0.3),
+        marginTop: pxToRem(4),
+        '&$error': {
+            color: '#db3445'
+        }
     },
     btn: {
         marginTop: pxToRem(24),
@@ -23,16 +46,28 @@ const useStyles = makeStyles((theme) => ({
             marginTop: pxToRem(34),
         },
         [theme.breakpoints.up('lg')]: {
-            marginTop: pxToRem(34),
+            marginTop: pxToRem(17),
         },
     },
-    inputError: {
-        height: 100,
-        borderColor: theme.palette.primary.mainHover,
-        '&:focus': {
-            boxShadow: '0 0 0 3px #f8d6da'
+
+    btnUpload:{
+        position:'absolute',
+        height: '100%',
+        bottom: 0,
+        right:0,
+        fontFamily: 'PT Sans',
+        lineHeight:30,
+        fontWeight:400,
+        backgroundColor:theme.inputButtonBackgroundColor,
+        borderColor: theme.inputBorderColor,
+        borderRadius: `0 4px 4px 0`,
+        '&:active': {
+            boxShadow: `${fade(theme.palette.secondary.main, 0.25)} 0 0 0 0.2rem`,
+            borderColor: theme.palette.secondary.main,
         },
-    }
+        zIndex: 2
+    },
+
 }));
 
 

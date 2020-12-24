@@ -32,7 +32,7 @@ const SideDrawer = ({ window }) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
-        console.log(firstDrawerList);
+
         setDrawerOpen(open);
     };
 

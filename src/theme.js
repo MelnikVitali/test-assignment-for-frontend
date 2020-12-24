@@ -28,7 +28,7 @@ const theme = createMuiTheme({
     palette: {
         primary: {
             main: '#ef5b4c',
-            mainHover:'#D24335',
+            mainHover: '#D24335',
             contrastText: '#212529',
         },
         secondary: {
@@ -37,12 +37,20 @@ const theme = createMuiTheme({
         },
         textPrimary: {
             main: '#ffffff'
-        }
+        },
     },
     backgroundColor: '#fff',
     backgroundColor2: '#f9f9f3',
-    backgroundColorLoadingImage: '#23304A',
+    backgroundColorInput: '#f5f8fa',
     mobileMenuTextColor: '#000000',
+    boxShadowError:'0 0 0 3px #f8d6da',
+    radioButtonHoverColor: '#ebf1f5',
+    inputBorderColor:'#ced4da',
+    inputErrorBoxShadow: '0 0 0 3px #f8d6da',
+    inputButtonBackgroundColor: '#f8f7f5',
+    placeholderGrayColor:'#b2b9c0',
+    hoverButtonGreyColor: '#DBE0E6',
+    formRegisterColor:'#212529',
     overrides: {
         MuiCssBaseline: {
             '@global': {
@@ -94,13 +102,13 @@ const theme = createMuiTheme({
                 lineHeight: pxToRem(50),
 
             },
-            h3:{
+            h3: {
                 fontSize: pxToRem(24),
                 color: '#212529',
                 fontWeight: 400,
                 lineHeight: pxToRem(30),
             },
-            h4:{
+            h4: {
                 fontSize: pxToRem(16),
                 color: '#212529',
                 fontWeight: 400,
@@ -112,11 +120,14 @@ const theme = createMuiTheme({
                 fontWeight: 400,
                 lineHeight: pxToRem(24),
             },
-            body1:{
+            body1: {
                 fontSize: pxToRem(16),
                 color: '#4c4b4b',
                 fontWeight: 400,
                 lineHeight: pxToRem(24),
+            },
+            body2: {
+                color: '#212529'
             }
         },
         MuiDrawer: {
@@ -143,28 +154,45 @@ const theme = createMuiTheme({
                 padding: `${pxToRem(4.5)} ${pxToRem(58.5)}`,
             },
             containedPrimary: {
-                color: '#fefefe'
+                color: '#fefefe',
+                '&:hover': {
+                    backgroundColor: '#D24335'
+                }
             },
-            textPrimary:{
-                '&:hover':{
+            textPrimary: {
+                '&:hover': {
                     backgroundColor: 'transparent'
                 }
             }
         },
-        MuiInputLabel:{
-            root:{
-                fontSize: 18,
+        MuiFormControlLabel:{
+            label:{
+                fontFamily: 'PT Sans',
                 color: '#212529',
-                 '&.Mui-focused':{
-                    color: '#212529'
-                 }
             }
         },
-        MuiFormHelperText:{
+        MuiFormLabel:{
             root:{
-                color:'#ef5b4c'
+                fontFamily: 'PT Sans',
+                color: '#212529',
+            }
+        },
+        MuiInputLabel: {
+            root: {
+                fontSize: 18,
+                color: '#212529',
+                '&.Mui-focused': {
+                    color: '#212529'
+                }
+            }
+        },
+        PrivateSwitchBase:{
+            root:{
+                padding:0,
+                marginRight: 8
             }
         }
+
     },
 });
 

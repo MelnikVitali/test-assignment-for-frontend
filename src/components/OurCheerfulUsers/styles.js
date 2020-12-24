@@ -35,8 +35,8 @@ const useStyles = makeStyles(theme => ({
             marginBottom: pxToRem(40),
         },
     },
-    btn: {
-        padding: `${pxToRem(4)} ${pxToRem(61)}`,
+    wrapperButton:{
+        position: 'relative',
         marginBottom: pxToRem(80),
         [theme.breakpoints.up('md')]: {
             marginBottom: pxToRem(122),
@@ -46,8 +46,16 @@ const useStyles = makeStyles(theme => ({
             marginBottom: pxToRem(161),
         },
     },
-    preloader:{
-        marginBottom: pxToRem(25)
+    btn: {
+        padding: `${pxToRem(4)} ${pxToRem(61)}`,
+    },
+    preloader: {
+        marginBottom: pxToRem(25),
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        marginTop: pxToRem(-12),
+        marginLeft: pxToRem(-12),
     }
 
 }));
