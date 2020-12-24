@@ -1,159 +1,168 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import InputMask from 'react-input-mask';
 
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import { Button, FormHelperText} from '@material-ui/core';
+import { Button, FormHelperText, InputLabel, FormControl } from '@material-ui/core';
 
-// import Preloader from '../../Preloader';
+import validationSchema from './validationSchema';
 
 import useStyles from './styles';
 import CustomInput from '../CustomInput';
-
-import InputMask from 'react-input-mask';
-
+import SelectYourPosition from '../SelectYourPosition';
+import CustomPhotoUploadInput from '../CustomPhotoUploadInput';
 
 const FormRegister = () => {
     const classes = useStyles();
 
-    const isFetching = useSelector(store => store.toggleIsFetchingReducer.isFetching);
+    const [ selectedPhoto, setSelectedPhoto ] = useState('');
 
-    const phoneRegExp = /^\+380 [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}$/; //validate phone
+    // const {positions, token} = useSelector(state => state.registration, shallowEqual);
+    // const dispatch = useDispatch();
 
+    // const isFetching = useSelector(store => store.toggleIsFetchingReducer.isFetching);
     const {
         handleSubmit, handleChange,
         values, errors, isValid,
-        touched, handleBlur, setValues
+        touched, handleBlur
     } = useFormik({
         initialValues: {
             name: '',
             email: '',
             phone: '',
             // position: '',
-            // photo: ''
+            photo: ''
         },
-        validationSchema: Yup.object({
-            name: Yup.string()
-                .required('Please enter a name')
-                .min(2, 'Name must be more then 1 character')
-                .max(60, 'Name must be less then 60 characters'),
-            email: Yup.string()
-                .required('Enter your email')
-                .email('Invalid email format'),
-            phone: Yup.string()
-                .required('Enter your phone')
-                .matches(phoneRegExp, 'Phone number is not valid'),
-            // position: Yup.string()
-            //     .required('Required'),
-            // photo: Yup.string()
-            //     .required('Required')
-        }),
+        validationSchema: validationSchema,
         onSubmit: fields => console.log(fields)
     });
 
+    const handleChangePhotoUpload = (event) => {
+        handleChange(event);
+
+        if (event.target && event.target.files) {
+            const photo = event.target.files[0] || '';
+            console.log(photo);
+            return setSelectedPhoto(photo.name);
+        }
+        return setSelectedPhoto('');
+
+
+    };
+
     return (
-        <>
-            {/*{isFetching ? <Preloader /> : null}*/}
-            <form
-                className={classes.root}
-                noValidate
-                onSubmit={handleSubmit}
-            >
+        <form className={classes.root} noValidate onSubmit={handleSubmit} >
+            <FormControl className={classes.formControl} >
+                <InputLabel shrink htmlFor='name' className={classes.label} >
+                    Name
+                </InputLabel >
+                <CustomInput
+                    error={touched.name && (Boolean(errors.name))}
+                    id='name'
+                    name='name'
+                    autoComplete='name'
+                    value={values.name}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder='Your name'
+                />
+                {touched.name && (Boolean(errors.name))
+                    ? <FormHelperText error className={classes.helperText} >
+                        {errors.name}
+                    </FormHelperText >
+                    : null}
+            </FormControl >
 
-                <FormControl
-                    className={classes.formControl}
-                >
-                    <InputLabel shrink htmlFor="your-name" >
-                        Name
-                    </InputLabel >
-                    <CustomInput
-                        error={touched.name && (Boolean(errors.name))}
-                        id="your-name"
-                        name="name"
-                        autoComplete="name"
-                        value={values.name}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        placeholder='Your name'
-                    />
-                    {touched.name && (Boolean(errors.name)) ?
-                        <FormHelperText className={classes.errorText} >{errors.name}</FormHelperText >
-                        : null}
-                </FormControl >
-                <FormControl
+            <FormControl className={classes.formControl} >
+                <InputLabel shrink htmlFor='email' className={classes.label} >
+                    Email
+                </InputLabel >
+                <CustomInput
+                    error={touched.email && (Boolean(errors.email))}
+                    id='email'
+                    name='email'
+                    autoComplete='email'
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder='Your email'
+                />
+                {touched.email && (Boolean(errors.email))
+                    ? <FormHelperText error className={classes.helperText} >
+                        {errors.email}
+                    </FormHelperText >
+                    : null}
+            </FormControl >
 
-                    className={classes.formControl}
+            <FormControl className={classes.formControl} >
+                <InputLabel shrink htmlFor='phone' className={classes.label} >
+                    Phone number
+                </InputLabel >
+                <InputMask
+                    id='phone'
+                    mask='+380 99 999 99 99'
+                    disabled={false}
+                    maskChar=' '
+                    value={values.phone}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    autoComplete='phone'
+                    placeholder='+380 XX XXX XX XX'
                 >
-                    <InputLabel shrink htmlFor="email">
-                        Email
-                    </InputLabel >
-                    <CustomInput
-                        error={touched.email && (Boolean(errors.email))}
-                        id="email"
-                        name="email"
-                        autoComplete="email"
-                        value={values.email}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        placeholder='Your email'
-                    />
-                    {touched.email && (Boolean(errors.email)) ?
-                        <FormHelperText className={classes.errorText} >{errors.email}</FormHelperText >
-                        : null}
-                </FormControl >
-                <FormControl
-
-                    className={classes.formControl}
-                >
-                    <InputLabel shrink htmlFor="phone" >
-                        Phone number
-                    </InputLabel >
-                    <InputMask
-                        id="phone"
-                        mask="+380 99 999 99 99"
-                        disabled={false}
-                        maskChar=" "
-                        value={values.phone}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        autoComplete="phone"
+                    {() => <CustomInput
+                        error={touched.phone && (Boolean(errors.phone))}
+                        id='phone'
+                        name='phone'
+                        // autoComplete='phone'
+                        // value={values.phone}
                         placeholder='+380 XX XXX XX XX'
+                    />}
+                </InputMask >
+                {touched.phone && (Boolean(errors.phone))
+                    ? <FormHelperText error className={classes.helperText}
                     >
-                        {() => <CustomInput
-                            error={touched.phone && (Boolean(errors.phone))}
-                            id="phone"
-                            name="phone"
-                            autoComplete="phone"
-                            value={values.phone}
-                            placeholder='+380 XX XXX XX XX'
-                            // onChange={handleChange}
-                            // onBlur={handleBlur}
-                            // placeholder='+380 XX XXX XX XX'
-                        />}
-                    </InputMask >
+                        {errors.phone}
+                    </FormHelperText >
+                    : <FormHelperText className={classes.helperText} >
+                        Enter phone number in open format
+                    </FormHelperText >}
+            </FormControl >
 
+            <SelectYourPosition />
 
-                    {touched.phone && (Boolean(errors.phone)) ?
-                        <FormHelperText className={classes.errorText} >{errors.phone}</FormHelperText >
-                        : null}
-                </FormControl >
+            <FormControl className={classes.formControl} >
+                <InputLabel shrink htmlFor='photo' className={classes.label} >
+                    Photo
+                </InputLabel >
 
+                <CustomPhotoUploadInput
+                    name='photo'
+                    id='photo'
+                    value={values.photo}
+                    touchedPhoto={touched}
+                    selectedPhoto={selectedPhoto}
+                    error={touched.photo && (Boolean(errors.photo))}
+                    onBlur={handleBlur}
+                    onChange={ handleChangePhotoUpload}
+                />
 
-                <Button
-                    disabled={!isValid}
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    className={classes.btn}
-                >
-                    Sign up now
-                </Button >
+                {touched.photo && (Boolean(errors.photo))
+                    ? <FormHelperText error className={classes.helperText} >
+                        {errors.photo}
+                    </FormHelperText >
+                    : null}
+            </FormControl >
 
-            </form >
-
-        </>
+            <Button
+                disabled={!isValid}
+                type='submit'
+                variant='contained'
+                color='primary'
+                className={classes.btn}
+            >
+                Sing up now
+            </Button >
+        </form >
     );
 };
 

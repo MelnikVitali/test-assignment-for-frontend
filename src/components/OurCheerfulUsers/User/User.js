@@ -17,11 +17,11 @@ const User = ({ user }) => {
                 md={4}
                 xs={12}
                 sm={6}
+                data-aos="zoom-in"
+                data-aos-duration="700"
                 className={classes.gridItem}
             >
-                <Box component='div' className={classes.userContent} data-aos="fade-up"
-                     data-aos-duration="400"
-                     data-aos-once>
+                <Box component='div' className={classes.userContent} >
                     <img
                         className={classes.userPhoto}
                         src={user.photo}

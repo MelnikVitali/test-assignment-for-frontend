@@ -7,12 +7,15 @@ import LetsGetAcquainted from '../LetsGetAcquainted/LetsGetAcquainted';
 import OurCheerfulUsers from '../OurCheerfulUsers';
 import Register from '../Register';
 
-import "aos/dist/aos.css";
+import 'aos/dist/aos.css';
 
 const App = () => {
     useEffect(() => {
-        AOS.init({ offset: 80 });
+        AOS.init({
+            offset: 80,
+        });
     }, []);
+
     return (
         <>
             <Header />
