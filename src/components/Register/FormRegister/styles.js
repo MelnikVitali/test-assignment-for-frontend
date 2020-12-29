@@ -67,6 +67,12 @@ const useStyles = makeStyles((theme) => ({
         },
         zIndex: 2
     },
+    previewAvatar:{
+        width: 70,
+        height:70,
+        marginTop: 10
+    }
+
 
 }));
 

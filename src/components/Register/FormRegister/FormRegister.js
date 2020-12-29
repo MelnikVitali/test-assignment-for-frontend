@@ -1,21 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import InputMask from 'react-input-mask';
 
-import { Button, FormHelperText, InputLabel, FormControl } from '@material-ui/core';
+import { Button, FormHelperText, InputLabel, FormControl, Avatar } from '@material-ui/core';
 
 import validationSchema from './validationSchema';
 
-import useStyles from './styles';
 import CustomInput from '../CustomInput';
 import SelectYourPosition from '../SelectYourPosition';
 import CustomPhotoUploadInput from '../CustomPhotoUploadInput';
+import { getPositions, getToken } from '../../../store/actions/registrationActions';
 
-const FormRegister = () => {
+import useStyles from './styles';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+
+const FormRegister = React.memo(() => {
     const classes = useStyles();
+    const dispatch = useDispatch();
 
-    const [ selectedPhoto, setSelectedPhoto ] = useState('');
+    const { positions, token } = useSelector(state => state.registrationReducer, shallowEqual);
+
+    useEffect(() => {
+        dispatch(getToken());
+
+        dispatch(getPositions());
+    }, []);
+
+    const [ selectedPhoto, setSelectedPhoto ] = useState({
+        url: '',
+        name: ''
+    });
 
     // const {positions, token} = useSelector(state => state.registration, shallowEqual);
     // const dispatch = useDispatch();
@@ -23,31 +38,38 @@ const FormRegister = () => {
     // const isFetching = useSelector(store => store.toggleIsFetchingReducer.isFetching);
     const {
         handleSubmit, handleChange,
+        setFieldValue,
         values, errors, isValid,
         touched, handleBlur
     } = useFormik({
+        enableReinitialize: true,
         initialValues: {
             name: '',
             email: '',
             phone: '',
-            // position: '',
+            position: positions.length > 0 ? positions[0].name :'',
             photo: ''
         },
         validationSchema: validationSchema,
-        onSubmit: fields => console.log(fields)
+        onSubmit: fields => console.log(JSON.stringify(values, null, 2))
     });
 
     const handleChangePhotoUpload = (event) => {
-        handleChange(event);
+        setFieldValue('photo', event.currentTarget.files[0]);
 
-        if (event.target && event.target.files) {
-            const photo = event.target.files[0] || '';
-            console.log(photo);
-            return setSelectedPhoto(photo.name);
+        if (event.target && event.target.files[0]) {
+            const name = event.target.files[0].name;
+            const url = URL.createObjectURL(event.target.files [0]);
+
+            return setSelectedPhoto({
+                url,
+                name
+            });
         }
-        return setSelectedPhoto('');
-
-
+        return setSelectedPhoto({
+            url: '',
+            name: ''
+        });
     };
 
     return (
@@ -102,19 +124,15 @@ const FormRegister = () => {
                     id='phone'
                     mask='+380 99 999 99 99'
                     disabled={false}
-                    maskChar=' '
                     value={values.phone}
+                    maskChar=' '
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    autoComplete='phone'
-                    placeholder='+380 XX XXX XX XX'
                 >
                     {() => <CustomInput
                         error={touched.phone && (Boolean(errors.phone))}
                         id='phone'
                         name='phone'
-                        // autoComplete='phone'
-                        // value={values.phone}
                         placeholder='+380 XX XXX XX XX'
                     />}
                 </InputMask >
@@ -128,7 +146,20 @@ const FormRegister = () => {
                     </FormHelperText >}
             </FormControl >
 
-            <SelectYourPosition />
+            {positions && positions.length > 0 &&
+            (<SelectYourPosition
+                    positions={positions}
+                    name='positions'
+                    setFieldValue={(name) => setFieldValue('position', name)}
+                    value={values.position}
+                    onChange={(name) => setFieldValue('position', name)}
+                />
+            )}
+            <FormHelperText style={{ display: 'block', position: 'relative', margin: '0 auto 0 0' }} error
+                            className={classes.helperText} >
+                {errors.position}
+            </FormHelperText >
+
 
             <FormControl className={classes.formControl} >
                 <InputLabel shrink htmlFor='photo' className={classes.label} >
@@ -140,10 +171,10 @@ const FormRegister = () => {
                     id='photo'
                     value={values.photo}
                     touchedPhoto={touched}
-                    selectedPhoto={selectedPhoto}
+                    selectedPhoto={selectedPhoto.name}
                     error={touched.photo && (Boolean(errors.photo))}
                     onBlur={handleBlur}
-                    onChange={ handleChangePhotoUpload}
+                    onChange={(event) => handleChangePhotoUpload(event)}
                 />
 
                 {touched.photo && (Boolean(errors.photo))
@@ -151,6 +182,12 @@ const FormRegister = () => {
                         {errors.photo}
                     </FormHelperText >
                     : null}
+
+                {!(errors.photo) && selectedPhoto.url && <Avatar
+                    alt={selectedPhoto.name}
+                    src={selectedPhoto.url}
+                    className={classes.previewAvatar}
+                />}
             </FormControl >
 
             <Button
@@ -164,6 +201,6 @@ const FormRegister = () => {
             </Button >
         </form >
     );
-};
+});
 
 export default FormRegister;

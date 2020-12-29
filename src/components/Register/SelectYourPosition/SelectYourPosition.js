@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import { FormControlLabel, FormLabel, RadioGroup } from '@material-ui/core';
 import CustomRadio from '../CustomRadio/CustomRadio';
 
 import useStyles from './styles';
 
-const SelectYourPosition = () => {
+const SelectYourPosition = ({ positions, value, onChange, setFieldValue }) => {
     const classes = useStyles();
+    // if (positions && positions.length > 0) {
+    //     setFieldValue(positions[0].name);
+    // }
 
     return (
-        <FormControl component="fieldset"  className={classes.root}>
-            <FormLabel className={classes.label} color='secondary' component="legend" >Select your position</FormLabel >
-            <RadioGroup className={classes.formControl} defaultValue="Frontend developer" aria-label="position" name="customized-radios" >
-                <FormControlLabel className={classes.formControl} value="Frontend developer" control={<CustomRadio />} label="Frontend developer" />
-                <FormControlLabel className={classes.formControl} value="Backend developer" control={<CustomRadio />} label="Backend developer" />
-                <FormControlLabel className={classes.formControl} value="Designer" control={<CustomRadio />} label="Designer" />
-                <FormControlLabel className={classes.formControl} value="QA" control={<CustomRadio />} label="QA" />
-            </RadioGroup >
-        </FormControl >
+        <>
+            {positions && positions.length > 0  && <FormControl component="fieldset" className={classes.root} >
+                <FormLabel className={classes.label} color='secondary' component="legend" >Select your
+                    position</FormLabel >
+                <RadioGroup className={classes.formControl} defaultValue={positions[0].name} aria-label="position"
+                            name="customized-radios" >
+                    {positions.map((position, index) => {
+                        return <FormControlLabel
+                            key={position.id}
+                            name={position.name}
+                            id={`${position.name}${position.id}`}
+                            className={classes.formControl}
+                            value={position.name}
+                            // checked={position.name === value}
+                            onChange={() => onChange(position.name)}
+                            control={<CustomRadio />} label={position.name} />;
+                    })}
+                </RadioGroup >
+                <div >Picked: {value}</div >
+            </FormControl >}
+        </ >
     );
+
 };
 
 export default SelectYourPosition;
