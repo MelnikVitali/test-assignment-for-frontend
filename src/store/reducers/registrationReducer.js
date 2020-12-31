@@ -3,6 +3,7 @@ import * as actions from '../actions/types';
 const initialState = {
     token: '',
     positions: [],
+    isOpenModal: true,
     requestMessage: '',
     requestSuccess: null
 };
@@ -17,6 +18,12 @@ export default (state = initialState,  action) => {
                 ...state,
                 positions: action.payload
             };
+
+        case actions.TOGGLE_MODAL:
+            return {
+                ...state,
+                isOpenModal: action.payload
+            }
 
         // case GET_REQUEST_MESSAGE:
         //     return {...state, requestMessage: payload};

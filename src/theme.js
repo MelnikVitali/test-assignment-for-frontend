@@ -30,6 +30,7 @@ const theme = createMuiTheme({
             main: '#ef5b4c',
             mainHover: '#D24335',
             contrastText: '#212529',
+            errorText: '#db3445'
         },
         secondary: {
             main: '#007bff',
@@ -43,14 +44,16 @@ const theme = createMuiTheme({
     backgroundColor2: '#f9f9f3',
     backgroundColorInput: '#f5f8fa',
     mobileMenuTextColor: '#000000',
-    boxShadowError:'0 0 0 3px #f8d6da',
+    boxShadowError: '0 0 0 3px #f8d6da',
     radioButtonHoverColor: '#ebf1f5',
-    inputBorderColor:'#ced4da',
+    inputBorderColor: '#ced4da',
     inputErrorBoxShadow: '0 0 0 3px #f8d6da',
     inputButtonBackgroundColor: '#f8f7f5',
-    placeholderGrayColor:'#b2b9c0',
+    placeholderGrayColor: '#b2b9c0',
     hoverButtonGreyColor: '#DBE0E6',
-    formRegisterColor:'#212529',
+    formRegisterColor: '#212529',
+    helperText: '#6c757d',
+    footerBorderColor: '#ececec',
     overrides: {
         MuiCssBaseline: {
             '@global': {
@@ -59,8 +62,14 @@ const theme = createMuiTheme({
                     OpenSansSemiBold,
                     PTSansRegular
                 ].join(','),
+                'html': {
+                    boxSizing: 'border-box',
+                    scrollBehavior: 'smooth',
+                    width: '100%',
+                    height: '100%'
+                },
                 'html, body': {
-                    outline: 'none'
+                    outline: 'none',
                 },
                 body: {
                     margin: '0 auto',
@@ -77,13 +86,15 @@ const theme = createMuiTheme({
                     marginLeft: 'auto',
                     marginRight: 'auto',
                     padding: 0,
+
+                    scrollBehavior: 'smooth'
                 },
                 ':focus': {
                     outline: 'none'
                 },
                 a: {
                     textDecoration: 'none !important',
-                }
+                },
             },
         },
         MuiTypography: {
@@ -113,6 +124,10 @@ const theme = createMuiTheme({
                 color: '#212529',
                 fontWeight: 400,
                 lineHeight: pxToRem(22),
+            },
+            h6: {
+                fontSize: pxToRem(24),
+                lineHeight: pxToRem(30),
             },
             subtitle1: {
                 fontSize: pxToRem(16),
@@ -165,14 +180,14 @@ const theme = createMuiTheme({
                 }
             }
         },
-        MuiFormControlLabel:{
-            label:{
+        MuiFormControlLabel: {
+            label: {
                 fontFamily: 'PT Sans',
                 color: '#212529',
             }
         },
-        MuiFormLabel:{
-            root:{
+        MuiFormLabel: {
+            root: {
                 fontFamily: 'PT Sans',
                 color: '#212529',
             }
@@ -186,10 +201,26 @@ const theme = createMuiTheme({
                 }
             }
         },
-        PrivateSwitchBase:{
-            root:{
-                padding:0,
+        PrivateSwitchBase: {
+            root: {
+                padding: 0,
                 marginRight: 8
+            }
+        },
+        MuiFormHelperText: {
+            root: {
+                '&.Mui-error': {
+                    color: '#db3445'
+                }
+            }
+        },
+        MuiDialog: {
+            paper: {
+                margin: pxToRem(16)
+            },
+            paperWidthSm: {
+                maxWidth: pxToRem(395),
+                width: pxToRem(395)
             }
         }
 

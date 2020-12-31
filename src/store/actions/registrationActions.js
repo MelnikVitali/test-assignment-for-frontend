@@ -40,3 +40,8 @@ export const getToken = () => async dispatch => {
         });
     }
 };
+
+export const toggleModal = (value) =>({
+    type: actions.TOGGLE_MODAL,
+    payload: value
+});

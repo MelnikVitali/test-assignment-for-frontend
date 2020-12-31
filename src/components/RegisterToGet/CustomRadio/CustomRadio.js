@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Radio } from '@material-ui/core';
 
-
 import useStyles from './styles';
 
 const CustomRadio = (props) => {

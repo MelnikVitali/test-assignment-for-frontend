@@ -79,7 +79,6 @@ const OurCheerfulUsers = React.memo(() => {
             <Box component='div' className={classes.wrapperButton} >
                 {nextUrl && nextUrl[0] && (new URL(nextUrl).searchParams.get('page') <= total_pages) &&
                 <Button
-                    href='#sign-up'
                     variant='contained'
                     color='primary'
                     disabled={isFetching}

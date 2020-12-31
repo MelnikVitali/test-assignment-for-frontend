@@ -5,9 +5,11 @@ import Header from '../Header';
 import TestAssignment from '../TestAssignment';
 import LetsGetAcquainted from '../LetsGetAcquainted/LetsGetAcquainted';
 import OurCheerfulUsers from '../OurCheerfulUsers';
-import Register from '../Register';
+import RegisterToGet from '../RegisterToGet';
 
 import 'aos/dist/aos.css';
+import Footer from '../Footer';
+import Modal from '../Modal';
 
 const App = () => {
     useEffect(() => {
@@ -22,7 +24,9 @@ const App = () => {
             <TestAssignment />
             <LetsGetAcquainted />
             <OurCheerfulUsers />
-            <Register />
+            <RegisterToGet />
+            <Footer />
+            <Modal/>
         </>
     );
 };

@@ -21,7 +21,7 @@ const validationSchema = Yup.object({
     position: Yup.string()
         .required('Select your position'),
     photo: Yup.mixed()
-        .required('A file is required')
+        .required('Your photo is required')
         .test(
             'fileSize',
             'Photo size must not exceed 5MB',

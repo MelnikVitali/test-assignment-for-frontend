@@ -21,7 +21,11 @@ const LetsGetAcquainted = () => {
                 Let's get acquainted
             </Typography >
             <Grid container className={classes.gridContainer} >
-                <Grid item >
+                <Grid
+                    item
+                    data-aos="zoom-in"
+                    data-aos-duration="700"
+                    className={classes.gridItem} >
                     <img src={manLaptopImg} alt='man with laptop' className={classes.img} />
                 </Grid >
                 <Grid item className={classes.gridItemContent} >

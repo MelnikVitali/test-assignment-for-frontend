@@ -6,7 +6,10 @@ const useStyles = makeStyles(theme => ({
         width: '100%',
         textAlign: 'left',
         marginTop: pxToRem(22),
-        marginBottom: 7
+        marginBottom: 7,
+        [theme.breakpoints.up('lg')]:{
+            marginTop: pxToRem(24),
+        }
 
     },
     label: {

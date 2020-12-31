@@ -11,13 +11,13 @@ const useStyles = makeStyles(theme => ({
 
     },
     titleH2: {
-        padding: `${pxToRem(68)} 0 ${pxToRem(3)}`,
+        padding: `${pxToRem(67)} 0 ${pxToRem(3)}`,
         [theme.breakpoints.up('md')]: {
-            padding: `${pxToRem(112)} 0 ${pxToRem(17)}`,
+            padding: `${pxToRem(111)} 0 ${pxToRem(17)}`,
             fontSize: pxToRem(40),
         },
         [theme.breakpoints.up('lg')]: {
-            padding: `${pxToRem(154)} 0 ${pxToRem(21)}`,
+            padding: `${pxToRem(155)} 0 ${pxToRem(20)}`,
             fontSize: pxToRem(50),
         }
     },
@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
         },
     },
     btn: {
-        padding: `${pxToRem(4)} ${pxToRem(61)}`,
+        padding: `${pxToRem(4.5)} ${pxToRem(61)}`,
     },
     preloader: {
         marginBottom: pxToRem(25),

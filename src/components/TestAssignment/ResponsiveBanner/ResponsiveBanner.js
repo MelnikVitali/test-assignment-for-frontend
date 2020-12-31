@@ -23,7 +23,7 @@ const ResponsiveBanner = () => {
         <>
             <picture >
                 <source
-                    media='(max-width: 481px)'
+                    media='(max-width: 540px)'
                     srcSet={
                         `${bannerImage360} 1x,
                          ${bannerImage360_2x} 2x,

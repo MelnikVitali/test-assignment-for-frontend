@@ -18,7 +18,7 @@ const useStales = makeStyles(theme => ({
         }
     },
     titleH2: {
-        padding: `${pxToRem(68)} 0 ${pxToRem(27)}`,
+        padding: `${pxToRem(67)} 0 ${pxToRem(25)}`,
         letterSpacing: pxToRem(-0.5),
         wordSpacing: pxToRem(2),
         [theme.breakpoints.up('md')]: {
@@ -66,8 +66,7 @@ const useStales = makeStyles(theme => ({
         }
     },
     titleH3: {
-
-        margin: `${pxToRem(29)} 0 ${pxToRem(20)}`,
+        margin: `${pxToRem(30)} 0 ${pxToRem(20)}`,
         textAlign: 'center',
         [theme.breakpoints.up('md')]: {
             margin: `${pxToRem(-4)} 0 ${pxToRem(20)}`,
@@ -80,14 +79,17 @@ const useStales = makeStyles(theme => ({
     },
     textBlock: {
         letterSpacing: pxToRem(-0.097),
-        marginBottom: pxToRem(25),
+        marginBottom: pxToRem(24),
         textAlign: 'justify',
+        [theme.breakpoints.up('md')]: {
+            marginBottom: pxToRem(24),
+        },
         [theme.breakpoints.up('lg')]: {
             letterSpacing: pxToRem(-0.03),
         }
     },
     btn: {
-        padding: `${pxToRem(2)} 0 ${pxToRem(0)}`,
+        padding: `${pxToRem(3)} 0 ${pxToRem(0)}`,
         '&:hover': {
             color: theme.palette.primary.mainHover
         }

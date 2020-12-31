@@ -5,7 +5,7 @@ const useStyles = makeStyles(theme => ({
     gridItem: {
         marginBottom: pxToRem(35),
         [theme.breakpoints.up('md')]: {
-            marginBottom: pxToRem(56),
+            marginBottom: pxToRem(55),
         },
         [theme.breakpoints.up('lg')]: {
             marginBottom: pxToRem(50),
