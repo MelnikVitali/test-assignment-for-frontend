@@ -4,11 +4,12 @@ import useStyles from './styles';
 import { Container, Typography } from '@material-ui/core';
 import FormRegister from './FormRegister';
 
-const Register = () => {
+const RegisterToGet = () => {
     const classes = useStyles();
 
     return (
         <Container
+            id='sign-up'
             component='section'
             maxWidth={false}
             className={classes.root}
@@ -27,10 +28,9 @@ const Register = () => {
             >
                 Attention! After successful registration and alert, update the list of users in the block from the top
             </Typography >
-
-            <FormRegister/>
+            <FormRegister />
         </Container >
     );
 };
 
-export default Register;
+export default RegisterToGet;

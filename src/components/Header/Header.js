@@ -26,12 +26,6 @@ const Header = () => {
         setSelectedIndex(null);
     };
 
-    const handleListItemClick = (event, index) => {
-        event.preventDefault();
-
-        setSelectedIndex(index);
-    };
-
     return (
         <AppBar position="sticky" className={classes.appBar} color='inherit' >
             <Toolbar className={classes.toolbar} >
@@ -60,7 +54,7 @@ const Header = () => {
                                 <Link
                                     href={path}
                                     color='inherit'
-                                    onClick={(event) => handleListItemClick(event, index)}
+                                    onClick={() => setSelectedIndex(index)}
                                 >
                                     {title}
                                 </Link >

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import { Box, Button, CircularProgress, Container, Grid, Typography } from '@material-ui/core';
 
@@ -20,8 +20,7 @@ const OurCheerfulUsers = React.memo(() => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    const usersList = useSelector(store => store.usersReducer.users);
-    const nextUrl = useSelector(store => store.usersReducer.nextUrl);
+    const { users, total_pages, nextUrl } = useSelector(store => store.usersReducer, shallowEqual);
     const errorMessage = useSelector(store => store.errorReducer.errorMessage);
     const isFetching = useSelector(store => store.toggleIsFetchingReducer.isFetching);
 
@@ -66,7 +65,7 @@ const OurCheerfulUsers = React.memo(() => {
                 className={classes.gridContainer}
             >
 
-                {usersList && usersList.length > 0 && usersList.map(user => {
+                {users && users.length > 0 && users.map(user => {
                         return <User key={user.id} user={user} />;
                     }
                 )}
@@ -78,9 +77,8 @@ const OurCheerfulUsers = React.memo(() => {
                 </Alert >
             )}
             <Box component='div' className={classes.wrapperButton} >
-                {nextUrl && nextUrl[0] &&
+                {nextUrl && nextUrl[0] && (new URL(nextUrl).searchParams.get('page') <= total_pages) &&
                 <Button
-                    href='#sign-up'
                     variant='contained'
                     color='primary'
                     disabled={isFetching}

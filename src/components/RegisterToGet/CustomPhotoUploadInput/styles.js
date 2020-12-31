@@ -10,8 +10,8 @@ const useStyles = makeStyles(theme => ({
     input: {
         position: 'relative',
         zIndex: 2,
-        width: '100%',
-        padding: `${pxToRem(8)} ${pxToRem(13)}`,
+        width: 0,
+        padding: `${pxToRem(8)} 0`,
         margin: 0,
         opacity: 0,
         '&:focus~label': {
@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
         fontFamily: 'PT Sans',
         fontSize: pxToRem(16),
         fontWeight: 400,
-        padding: `${pxToRem(6)} ${pxToRem(13)}`,
+        padding: `${pxToRem(6)} ${pxToRem(81)} ${pxToRem(6)} ${pxToRem(13)}`,
         textAlign: 'left',
         transition: theme.transitions.create([ 'border-color', 'box-shadow' ]),
         zIndex: 1,
@@ -68,7 +68,6 @@ const useStyles = makeStyles(theme => ({
         },
     },
     error: {
-        color: theme.palette.error.main,
         borderColor: theme.palette.primary.mainHover,
         transition: theme.transitions.create([ 'border-color', 'box-shadow' ]),
     }
