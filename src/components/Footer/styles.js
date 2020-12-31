@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     },
     text: {
         padding: `${pxToRem(16)} 0`,
-        overflow:'hidden',
+        whiteSpace:'nowrap',
         [theme.breakpoints.up('md')]:{
             marginLeft:pxToRem(10)
         },
