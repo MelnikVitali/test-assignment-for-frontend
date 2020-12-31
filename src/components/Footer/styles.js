@@ -5,6 +5,8 @@ const useStyles = makeStyles(theme => ({
     root:{
         display:'flex',
         justifyContent: 'center',
+        padding:0,
+        overflow:'hidden',
         borderTop:`${pxToRem(1)} solid ${theme.footerBorderColor}`,
 
     },
