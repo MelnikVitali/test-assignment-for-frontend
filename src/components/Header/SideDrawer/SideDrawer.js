@@ -16,7 +16,7 @@ import logo from '../../../assets/logo.svg';
 
 import useStyles from './styles';
 
-const SideDrawer = ({ window }) => {
+const SideDrawer = React.memo(({ window }) => {
     const classes = useStyles();
 
     const [ drawerOpen, setDrawerOpen ] = useState(false);
@@ -129,6 +129,6 @@ const SideDrawer = ({ window }) => {
             </Drawer >
         </ >
     );
-};
+});
 
 export default SideDrawer;

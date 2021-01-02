@@ -15,10 +15,14 @@ import {
 
 import validationSchema from './validationSchema';
 import fieldProps from './fieldProps';
+
 import CustomInput from '../CustomInput';
+import Modal from '../../Modal';
+
 import SelectYourPosition from '../SelectYourPosition';
 import CustomPhotoUploadInput from '../CustomPhotoUploadInput';
-import { getPositions, getToken } from '../../../store/actions/registrationActions';
+
+import { addNewUser, getPositions, getToken } from '../../../store/actions/registrationActions';
 
 import useStyles from './styles';
 
@@ -29,14 +33,15 @@ const FormRegister = React.memo(() => {
     const { positions, token } = useSelector(state => state.registrationReducer, shallowEqual);
     const isFetching = useSelector(store => store.toggleIsFetchingReducer.isFetching);
 
+    const initialState = { url: '', name: '' };
+    const [ selectedPhoto, setSelectedPhoto ] = useState(initialState);
+
     useEffect(() => {
         dispatch(getToken());
 
         dispatch(getPositions());
-    }, [ dispatch ]);
 
-    const initialState = { url: '', name: '' };
-    const [ selectedPhoto, setSelectedPhoto ] = useState(initialState);
+    }, [ dispatch ]);
 
     const formikInitialValues = {
         name: '',
@@ -66,23 +71,10 @@ const FormRegister = React.memo(() => {
 
             const config = { headers: { 'Token': `${token}` } };
 
-            resetForm();
-            setSelectedPhoto(initialState);
-
-            // // sent request and return data.success
-            // const success = await dispatch(postNewUser(config, formData));
-            // if (success) {
-            //     resetForm({values: ''});
-            //     dispatch(createSetIsSuccessModal(success));
-            //     dispatch(createShowModal())
-            // } else {
-            //     dispatch(createSetIsSuccessModal(success));
-            //     dispatch(createShowModal())
-            // }
-            console.log(formData);
-            console.log(JSON.stringify(values, null, 2));
+            dispatch(addNewUser(formData, config, resetForm, setSelectedPhoto, initialState));
         }
     });
+
 
     const handleChangePhotoUpload = (event) => {
         setFieldValue('photo', event.currentTarget.files[0]);
@@ -98,7 +90,6 @@ const FormRegister = React.memo(() => {
 
     return (
         <>
-            {/*{isFetching ? <Preloader /> : null}*/}
             <form className={classes.root} noValidate onSubmit={handleSubmit} >
                 <FormControl className={classes.formControl} >
                     <InputLabel shrink htmlFor='name' className={classes.label} >Name</InputLabel >
@@ -200,6 +191,7 @@ const FormRegister = React.memo(() => {
                         className={classes.preloader} />}
                 </Box >
             </form >
+            <Modal />
         </>
     );
 });

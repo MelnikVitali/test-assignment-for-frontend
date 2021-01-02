@@ -3,9 +3,9 @@ import React from 'react';
 import bannerImage360 from '../../../assets/bannerPhoto/banner-photo360.jpg';
 import bannerImage360_2x from '../../../assets/bannerPhoto/banner-photo360@2x.jpg';
 import bannerImage360_3x from '../../../assets/bannerPhoto/banner-photo360@3x.jpg';
-import bannerImage480 from '../../../assets/bannerPhoto/banner-photo480.jpg';
-import bannerImage480_2x from '../../../assets/bannerPhoto/banner-photo480@2x.jpg';
-import bannerImage480_3x from '../../../assets/bannerPhoto/banner-photo480@3x.jpg';
+import bannerImage526 from '../../../assets/bannerPhoto/banner-photo526.jpg';
+import bannerImage526_2x from '../../../assets/bannerPhoto/banner-photo526@2x.jpg';
+import bannerImage526_3x from '../../../assets/bannerPhoto/banner-photo526@3x.jpg';
 import bannerImage768 from '../../../assets/bannerPhoto/banner-photo768.jpg';
 import bannerImage768_2x from '../../../assets/bannerPhoto/banner-photo768@2x.jpg';
 import bannerImage768_3x from '../../../assets/bannerPhoto/banner-photo768@3x.jpg';
@@ -16,14 +16,14 @@ import bannerImage1024_3x from '../../../assets/bannerPhoto/banner-photo1024@3x.
 
 import useStyles from './styles';
 
-const ResponsiveBanner = () => {
+const ResponsiveBanner = React.memo(() => {
     const classes = useStyles();
 
     return (
         <>
             <picture >
                 <source
-                    media='(max-width: 540px)'
+                    media='(max-width: 480px)'
                     srcSet={
                         `${bannerImage360} 1x,
                          ${bannerImage360_2x} 2x,
@@ -33,9 +33,9 @@ const ResponsiveBanner = () => {
                 <source
                     media='(max-width: 767px)'
                     srcSet={
-                        `${bannerImage480} 1x,
-                         ${bannerImage480_2x} 2x,
-                         ${bannerImage480_3x} 3x`
+                        `${bannerImage526} 1x,
+                         ${bannerImage526_2x} 2x,
+                         ${bannerImage526_3x} 3x`
                     }
                 />
                 <source
@@ -63,6 +63,6 @@ const ResponsiveBanner = () => {
             </picture >
         </ >
     );
-};
+});
 
 export default ResponsiveBanner;

@@ -8,10 +8,6 @@ import manLaptopImg from '../../assets/man-laptop-v1.svg';
 const LetsGetAcquainted = () => {
     const classes = useStyles();
 
-    const handleClick = () => {
-        console.log(window.innerWidth);
-    };
-
     return (
         <Container
             component='section'
@@ -45,7 +41,7 @@ const LetsGetAcquainted = () => {
                         href='#sign-up'
                         color='primary'
                         className={classes.btn}
-                        onClick={handleClick} >
+                    >
                         Sing up now
                     </Button >
 

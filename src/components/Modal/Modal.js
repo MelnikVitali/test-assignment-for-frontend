@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -17,7 +17,7 @@ import { toggleModal } from '../../store/actions/registrationActions';
 
 import useStyles from './styles';
 
-const Modal = () => {
+const Modal = React.memo(() => {
     const classes = useStyles();
 
     const dispatch = useDispatch();
@@ -27,6 +27,11 @@ const Modal = () => {
     const handleClose = () => {
         dispatch(toggleModal(false));
     };
+
+    useEffect(() => {
+
+    }, [ isOpenModal ]);
+    
 
     return (
         <div >
@@ -53,6 +58,6 @@ const Modal = () => {
             </Dialog >
         </div >
     );
-};
+});
 
 export default Modal;

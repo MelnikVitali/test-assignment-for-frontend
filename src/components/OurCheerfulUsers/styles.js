@@ -27,14 +27,6 @@ const useStyles = makeStyles(theme => ({
             marginBottom: pxToRem(77),
         },
     },
-    errorMessage: {
-        justifyContent: 'center',
-        marginTop: pxToRem(25),
-        [theme.breakpoints.up('md')]: {
-            marginTop: 0,
-            marginBottom: pxToRem(40),
-        },
-    },
     wrapperButton:{
         position: 'relative',
         marginBottom: pxToRem(80),

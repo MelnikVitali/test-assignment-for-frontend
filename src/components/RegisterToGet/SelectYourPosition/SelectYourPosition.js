@@ -5,7 +5,7 @@ import CustomRadio from '../CustomRadio/CustomRadio';
 
 import useStyles from './styles';
 
-const SelectYourPosition = ({ positions, value, onChange }) => {
+const SelectYourPosition = React.memo(({ positions, value, onChange }) => {
     const classes = useStyles();
 
     return (
@@ -32,6 +32,6 @@ const SelectYourPosition = ({ positions, value, onChange }) => {
         </ >
     );
 
-};
+});
 
 export default SelectYourPosition;

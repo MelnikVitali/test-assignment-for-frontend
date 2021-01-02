@@ -9,9 +9,8 @@ import RegisterToGet from '../RegisterToGet';
 
 import 'aos/dist/aos.css';
 import Footer from '../Footer';
-import Modal from '../Modal';
 
-const App = () => {
+const App = React.memo(() => {
     useEffect(() => {
         AOS.init({
             offset: 80,
@@ -26,9 +25,8 @@ const App = () => {
             <OurCheerfulUsers />
             <RegisterToGet />
             <Footer />
-            <Modal/>
         </>
     );
-};
+});
 
 export default App;

@@ -17,7 +17,7 @@ import SideDrawer from './SideDrawer';
 
 import useStyles from './styles';
 
-const Header = () => {
+const Header = React.memo(() => {
     const classes = useStyles();
 
     const [ selectedIndex, setSelectedIndex ] = useState(null);
@@ -68,6 +68,6 @@ const Header = () => {
             </Toolbar >
         </AppBar >
     );
-};
+});
 
 export default Header;

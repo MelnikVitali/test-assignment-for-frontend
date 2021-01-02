@@ -6,7 +6,7 @@ import defaultAvatar from '../../../assets/avatar.svg';
 
 import useStales from './styles';
 
-const User = ({ user }) => {
+const User = React.memo(({ user }) => {
     const classes = useStales();
 
     return (
@@ -68,6 +68,6 @@ const User = ({ user }) => {
             </Grid >
         </ >
     );
-};
+});
 
 export default User;

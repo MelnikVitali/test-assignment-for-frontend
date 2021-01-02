@@ -1,47 +1,69 @@
 import { toggleIsFetching } from './toggleIsFetchingActions';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+
 import { APIUrls } from '../../configs/APIUrls';
 import * as actions from './types';
+import { getFirstUsers } from './usersActions';
 
-export const getPositions = () => async dispatch => {
+const urlGetUsers = window.innerWidth < 600 ?
+    APIUrls.getUsersMobileStartPage :
+    APIUrls.getUsersTabletStartPage;
+
+const axiosGetRegister = (url, actionsType, keyData) => async dispatch => {
     try {
         dispatch(toggleIsFetching(true));
 
-        const res = await axios.get(APIUrls.getPositions);
+        const res = await axios.get(url);
 
         dispatch(toggleIsFetching(false));
-        return dispatch({ type: actions.GET_POSITIONS, payload: res.data.positions });
+
+        return dispatch({ type: actionsType, payload: res.data[keyData] });
 
     } catch (error) {
         dispatch(toggleIsFetching(false));
 
+        toast.error(error.response ? error.response.data.message : error.message);
+
         return dispatch({
             type: actions.ERROR,
-            payload: error.message
+            payload: error.response ? error.response.data.message : error.message
         });
     }
 };
 
-export const getToken = () => async dispatch => {
+export const getPositions = () => axiosGetRegister(APIUrls.getPositions, actions.GET_POSITIONS, 'positions');
+export const getToken = () => axiosGetRegister(APIUrls.getToken, actions.GET_TOKEN, 'token');
+
+export const addNewUser = (body, config, resetForm, setSelectedPhoto, initialState) => async (dispatch) => {
     try {
         dispatch(toggleIsFetching(true));
 
-        const res = await axios.get(APIUrls.getToken);
+        const res = await axios.post(APIUrls.addNewUser, body, config);
 
         dispatch(toggleIsFetching(false));
-        return dispatch({ type: actions.GET_TOKEN, payload: res.data.token });
+        if (res) {
+            dispatch(toggleModal(true));
 
+            dispatch(getFirstUsers(urlGetUsers));
+
+            resetForm();
+
+            setSelectedPhoto(initialState);
+        }
     } catch (error) {
         dispatch(toggleIsFetching(false));
 
+        toast.error(error.response ? error.response.data.message : error.message);
+
         return dispatch({
             type: actions.ERROR,
-            payload: error.message
+            payload: error.response ? error.response.data.message : error.message
         });
     }
 };
 
-export const toggleModal = (value) =>({
+export const toggleModal = (value) => ({
     type: actions.TOGGLE_MODAL,
     payload: value
 });
