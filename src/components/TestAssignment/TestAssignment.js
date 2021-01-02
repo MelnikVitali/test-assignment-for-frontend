@@ -8,7 +8,7 @@ import ResponsiveBanner from './ResponsiveBanner';
 
 import useStyles from './styles';
 
-const TestAssignment = () => {
+const TestAssignment = React.memo(() => {
     const classes = useStyles();
 
     const { subtitleMobile, subtitleTabletUp } = subtitleInH1;
@@ -43,6 +43,6 @@ const TestAssignment = () => {
             </Box >
         </Container >
     );
-};
+});
 
 export default TestAssignment;

@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
         padding: `${pxToRem(16)} 0`,
         whiteSpace:'nowrap',
         [theme.breakpoints.up('md')]:{
-            marginLeft:pxToRem(10)
+            marginLeft:pxToRem(10),
         },
         [theme.breakpoints.up('lg')]:{
             marginLeft:pxToRem(0)

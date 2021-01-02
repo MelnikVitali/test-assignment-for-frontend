@@ -2,7 +2,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { pxToRem } from '../../../utils/pxToRem';
 
-
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -87,7 +86,11 @@ const useStyles = makeStyles((theme) => ({
         left: '50%',
         marginTop: pxToRem(-12),
         marginLeft: pxToRem(-12),
-    }
+    },
+    errorMessage: {
+        justifyContent: 'center',
+        marginBottom: pxToRem(20),
+    },
 }));
 
 

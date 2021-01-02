@@ -4,7 +4,7 @@ import useStyles from './styles';
 import { Container, Typography } from '@material-ui/core';
 import FormRegister from './FormRegister';
 
-const RegisterToGet = () => {
+const RegisterToGet = React.memo(() => {
     const classes = useStyles();
 
     return (
@@ -31,6 +31,6 @@ const RegisterToGet = () => {
             <FormRegister />
         </Container >
     );
-};
+});
 
 export default RegisterToGet;

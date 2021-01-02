@@ -1,11 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+// /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 
+import 'react-toastify/dist/ReactToastify.css';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import { Box, Button, CircularProgress, Container, Grid, Typography } from '@material-ui/core';
-
-import Alert from '@material-ui/lab/Alert';
 
 import { getFirstUsers, getNextUsers } from '../../store/actions/usersActions';
 import { clearErrors } from '../../store/actions/errorActions';
@@ -21,7 +20,6 @@ const OurCheerfulUsers = React.memo(() => {
     const dispatch = useDispatch();
 
     const { users, total_pages, nextUrl } = useSelector(store => store.usersReducer, shallowEqual);
-    const errorMessage = useSelector(store => store.errorReducer.errorMessage);
     const isFetching = useSelector(store => store.toggleIsFetchingReducer.isFetching);
 
     useEffect(() => {
@@ -32,7 +30,7 @@ const OurCheerfulUsers = React.memo(() => {
         dispatch(clearErrors());
 
         dispatch(getFirstUsers(url));
-    }, [ window.innerWidth, getFirstUsers, clearErrors ]);
+    }, [   dispatch  ]);
 
 
     const handleNextUsersList = () => {
@@ -64,18 +62,12 @@ const OurCheerfulUsers = React.memo(() => {
                 justify="center"
                 className={classes.gridContainer}
             >
-
                 {users && users.length > 0 && users.map(user => {
                         return <User key={user.id} user={user} />;
                     }
                 )}
-
             </Grid >
-            {errorMessage && (
-                <Alert severity="error" className={classes.errorMessage} >
-                    {errorMessage}
-                </Alert >
-            )}
+
             <Box component='div' className={classes.wrapperButton} >
                 {nextUrl && nextUrl[0] && (new URL(nextUrl).searchParams.get('page') <= total_pages) &&
                 <Button
