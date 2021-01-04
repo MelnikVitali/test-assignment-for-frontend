@@ -1,8 +1,7 @@
 import * as actions from '../actions/types';
 
-
 const initialState = {
-    nextUrl: null,
+    nextUrl: '',
 };
 
 export default (state = initialState, action) => {

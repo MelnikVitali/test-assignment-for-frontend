@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import {
     AppBar,
@@ -12,25 +11,19 @@ import {
 
 import logo from '../../assets/logo.svg';
 
+import navLinks from '../../constans/navLinks';
+
 import SideDrawer from './SideDrawer';
 
 import useStyles from './styles';
 
-const Header = () => {
+const Header = React.memo(() => {
     const classes = useStyles();
-
-    const navLinks = useSelector(state => state.navLinksReducer.navLinks);
 
     const [ selectedIndex, setSelectedIndex ] = useState(null);
 
     const handleLogoClick = () => {
         setSelectedIndex(null);
-    };
-
-    const handleListItemClick = (event, index) => {
-        event.preventDefault();
-
-        setSelectedIndex(index);
     };
 
     return (
@@ -61,7 +54,7 @@ const Header = () => {
                                 <Link
                                     href={path}
                                     color='inherit'
-                                    onClick={(event) => handleListItemClick(event, index)}
+                                    onClick={() => setSelectedIndex(index)}
                                 >
                                     {title}
                                 </Link >
@@ -75,6 +68,6 @@ const Header = () => {
             </Toolbar >
         </AppBar >
     );
-};
+});
 
 export default Header;

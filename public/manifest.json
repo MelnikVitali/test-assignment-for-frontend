@@ -1,11 +1,21 @@
 {
-  "short_name": "abz.agency",
-  "name": "abz.agency landing page",
+  "name": "test_assignment",
+  "short_name": "Vitalii Melnyk test task",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
     }
   ],
   "start_url": ".",
@@ -13,4 +23,3 @@
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
-

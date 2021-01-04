@@ -11,13 +11,13 @@ const useStyles = makeStyles(theme => ({
 
     },
     titleH2: {
-        padding: `${pxToRem(68)} 0 ${pxToRem(3)}`,
+        padding: `${pxToRem(67)} 0 ${pxToRem(3)}`,
         [theme.breakpoints.up('md')]: {
-            padding: `${pxToRem(112)} 0 ${pxToRem(17)}`,
+            padding: `${pxToRem(111)} 0 ${pxToRem(17)}`,
             fontSize: pxToRem(40),
         },
         [theme.breakpoints.up('lg')]: {
-            padding: `${pxToRem(154)} 0 ${pxToRem(21)}`,
+            padding: `${pxToRem(155)} 0 ${pxToRem(20)}`,
             fontSize: pxToRem(50),
         }
     },
@@ -27,16 +27,8 @@ const useStyles = makeStyles(theme => ({
             marginBottom: pxToRem(77),
         },
     },
-    errorMessage: {
-        justifyContent: 'center',
-        marginTop: pxToRem(25),
-        [theme.breakpoints.up('md')]: {
-            marginTop: 0,
-            marginBottom: pxToRem(40),
-        },
-    },
-    btn: {
-        padding: `${pxToRem(4.5)} ${pxToRem(61)}`,
+    wrapperButton: {
+        position: 'relative',
         marginBottom: pxToRem(80),
         [theme.breakpoints.up('md')]: {
             marginBottom: pxToRem(122),
@@ -45,7 +37,19 @@ const useStyles = makeStyles(theme => ({
             marginTop: 0,
             marginBottom: pxToRem(161),
         },
+    },
+    btn: {
+        padding: `${pxToRem(4.5)} ${pxToRem(61)}`,
+    },
+    preloader: {
+        marginBottom: pxToRem(25),
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        marginTop: pxToRem(-12),
+        marginLeft: pxToRem(-12),
     }
+
 }));
 
 export default useStyles;

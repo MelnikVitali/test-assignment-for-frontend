@@ -1,13 +1,13 @@
-export const IS_DRAWER_OPEN = 'IS_DRAWER_OPEN';
+export const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
-export const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
-
-export const ERROR = "ERROR";
-export const CLEAR_ERRORS = "CLEAR_ERRORS";
-
-export const GET_NAV_LINKS = 'GET_NAV_LINKS';
-export const GET_MOBILE_NAV_LINKS = 'GET_MOBILE_NAV_LINKS';
-export const GET_SUBTITLE_IN_H1 ='GET_SUBTITLE_IN_H1';
+export const ERROR = 'ERROR';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const GET_FIRST_USERS = 'GET_FIRST_USERS';
 export const GET_NEXT_USERS = 'GET_NEXT_USERS';
+
+export const GET_TOKEN = 'GET_TOKEN';
+export const GET_POSITIONS = 'GET_POSITIONS';
+
+export const TOGGLE_MODAL = 'TOGGLE_MODAL';
+

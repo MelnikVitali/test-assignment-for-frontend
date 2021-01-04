@@ -1,16 +1,13 @@
 import React from 'react';
 
-import useStyles from './styles';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 
 import manLaptopImg from '../../assets/man-laptop-v1.svg';
 
+import useStyles from './styles';
+
 const LetsGetAcquainted = () => {
     const classes = useStyles();
-
-    const handleClick = () => {
-        console.log(window.innerWidth);
-    };
 
     return (
         <Container
@@ -21,7 +18,11 @@ const LetsGetAcquainted = () => {
                 Let's get acquainted
             </Typography >
             <Grid container className={classes.gridContainer} >
-                <Grid item >
+                <Grid
+                    item
+                    data-aos="zoom-in"
+                    data-aos-duration="700"
+                    className={classes.gridItem} >
                     <img src={manLaptopImg} alt='man with laptop' className={classes.img} />
                 </Grid >
                 <Grid item className={classes.gridItemContent} >
@@ -41,7 +42,7 @@ const LetsGetAcquainted = () => {
                         href='#sign-up'
                         color='primary'
                         className={classes.btn}
-                        onClick={handleClick} >
+                    >
                         Sing up now
                     </Button >
 

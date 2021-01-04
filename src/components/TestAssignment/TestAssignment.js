@@ -18,7 +18,6 @@ const TestAssignment = React.memo(() => {
             component='section'
             maxWidth={false}
             className={classes.root}
-
         >
             <ResponsiveBanner />
 
