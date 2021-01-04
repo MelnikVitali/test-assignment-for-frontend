@@ -86,7 +86,6 @@ const theme = createMuiTheme({
                     marginLeft: 'auto',
                     marginRight: 'auto',
                     padding: 0,
-
                     scrollBehavior: 'smooth'
                 },
                 ':focus': {
@@ -111,7 +110,6 @@ const theme = createMuiTheme({
                 color: '#212529',
                 fontWeight: 400,
                 lineHeight: pxToRem(50),
-
             },
             h3: {
                 fontSize: pxToRem(24),
@@ -223,7 +221,6 @@ const theme = createMuiTheme({
                 width: pxToRem(395)
             }
         }
-
     },
 });
 

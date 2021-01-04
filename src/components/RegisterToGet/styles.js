@@ -19,7 +19,6 @@ const useStyles = makeStyles(theme => ({
             marginLeft: 0,
             marginBottom: pxToRem(165),
         }
-
     },
     titleH2: {
         margin: `${pxToRem(68)} 0 ${pxToRem(11)}`,

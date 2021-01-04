@@ -1,8 +1,10 @@
 import React from 'react';
 
-import useStyles from './styles';
 import { Container, Typography } from '@material-ui/core';
+
 import FormRegister from './FormRegister';
+
+import useStyles from './styles';
 
 const RegisterToGet = React.memo(() => {
     const classes = useStyles();

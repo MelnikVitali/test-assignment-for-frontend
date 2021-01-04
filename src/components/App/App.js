@@ -6,9 +6,9 @@ import TestAssignment from '../TestAssignment';
 import LetsGetAcquainted from '../LetsGetAcquainted/LetsGetAcquainted';
 import OurCheerfulUsers from '../OurCheerfulUsers';
 import RegisterToGet from '../RegisterToGet';
+import Footer from '../Footer';
 
 import 'aos/dist/aos.css';
-import Footer from '../Footer';
 
 const App = React.memo(() => {
     useEffect(() => {

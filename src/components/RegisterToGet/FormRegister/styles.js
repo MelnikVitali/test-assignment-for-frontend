@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
         height: 70,
         marginTop: 10,
     },
-    wrapperButton:{
+    wrapperButton: {
         position: 'relative',
         marginTop: pxToRem(17),
         [theme.breakpoints.up('md')]: {

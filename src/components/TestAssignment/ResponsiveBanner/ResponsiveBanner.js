@@ -26,7 +26,6 @@ import bannerWebpImage1024 from '../../../assets/bannerPhoto/banner-photo1024.we
 import bannerWebpImage1024_2x from '../../../assets/bannerPhoto/banner-photo1024@2x.webp';
 import bannerWebpImage1024_3x from '../../../assets/bannerPhoto/banner-photo1024@3x.webp';
 
-
 import useStyles from './styles';
 
 const ResponsiveBanner = React.memo(() => {
@@ -70,7 +69,6 @@ const ResponsiveBanner = React.memo(() => {
                          ${bannerImage526_3x} 3x`
                     }
                 />
-
 
                 <source
                     media='(max-width: 1023px)'

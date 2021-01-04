@@ -1,7 +1,8 @@
 import React from 'react';
 
-import useStyles from './styles';
 import { Container, Divider, Typography } from '@material-ui/core';
+
+import useStyles from './styles';
 
 const Footer = () => {
     const classes = useStyles();
@@ -12,12 +13,12 @@ const Footer = () => {
             maxWidth={false}
             className={classes.root}
         >
-           <Divider/>
-            <Typography className={classes.text}>
+            <Divider />
+            <Typography className={classes.text} >
                 © abz.agency specially for the test task
-            </Typography>
+            </Typography >
 
-        </Container>
+        </Container >
     );
 };
 

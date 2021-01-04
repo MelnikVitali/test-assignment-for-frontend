@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-import { pxToRem } from "../../utils/pxToRem";
+import { pxToRem } from '../../utils/pxToRem';
 
 const useStyles = makeStyles(theme => ({
     appBar: {
