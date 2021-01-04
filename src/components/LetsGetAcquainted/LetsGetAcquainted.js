@@ -1,9 +1,10 @@
 import React from 'react';
 
-import useStyles from './styles';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 
 import manLaptopImg from '../../assets/man-laptop-v1.svg';
+
+import useStyles from './styles';
 
 const LetsGetAcquainted = () => {
     const classes = useStyles();

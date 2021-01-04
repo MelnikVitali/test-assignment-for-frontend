@@ -13,14 +13,13 @@ import {
     Box,
 } from '@material-ui/core';
 
-import validationSchema from './validationSchema';
-import fieldProps from './fieldProps';
+import validationSchema from '../../../utils/validationSchema';
+import fieldsInputProps from '../../../utils/fieldsInputProps';
 
 import CustomInput from '../CustomInput';
-import Modal from '../../Modal';
-
 import SelectYourPosition from '../SelectYourPosition';
 import CustomPhotoUploadInput from '../CustomPhotoUploadInput';
+import Modal from '../../Modal';
 
 import { addNewUser, getPositions, getToken } from '../../../store/actions/registrationActions';
 
@@ -75,7 +74,6 @@ const FormRegister = React.memo(() => {
         }
     });
 
-
     const handleChangePhotoUpload = (event) => {
         setFieldValue('photo', event.currentTarget.files[0]);
 
@@ -98,7 +96,7 @@ const FormRegister = React.memo(() => {
                         value={values.name}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        {...fieldProps.name}
+                        {...fieldsInputProps.name}
                     />
                     {touched.name && (Boolean(errors.name))
                         ? <FormHelperText error className={classes.helperText} >{errors.name}</FormHelperText >
@@ -112,7 +110,7 @@ const FormRegister = React.memo(() => {
                         value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        {...fieldProps.email}
+                        {...fieldsInputProps.email}
                     />
                     {touched.email && (Boolean(errors.email))
                         ? <FormHelperText error className={classes.helperText} >{errors.email}</FormHelperText >
@@ -126,13 +124,14 @@ const FormRegister = React.memo(() => {
                         mask='+380 99 999 99 99'
                         disabled={false}
                         value={values.phone}
-                        maskChar=' '
+                        maskChar='_'
                         onChange={handleChange}
                         onBlur={handleBlur}
                         autoComplete='phone'
                         style={{ paddingLeft: 12 }}
                     >
-                        {() => <CustomInput error={touched.phone && (Boolean(errors.phone))} {...fieldProps.phone} />}
+                        {() => <CustomInput
+                            error={touched.phone && (Boolean(errors.phone))} {...fieldsInputProps.phone} />}
                     </InputMask >
                     {touched.phone && (Boolean(errors.phone))
                         ? <FormHelperText error className={classes.helperText} >{errors.phone}</FormHelperText >
@@ -143,11 +142,12 @@ const FormRegister = React.memo(() => {
 
                 {positions && positions.length > 0 &&
                 (<SelectYourPosition
-                    {...fieldProps.positions}
+                    {...fieldsInputProps.positions}
                     positions={positions}
                     value={values.position}
                     onChange={(name) => setFieldValue('position', name)}
-                />)}
+                >
+                </SelectYourPosition >)}
 
                 <FormControl className={classes.formControl} >
                     <InputLabel shrink htmlFor='photo' className={classes.label} >
@@ -155,7 +155,7 @@ const FormRegister = React.memo(() => {
                     </InputLabel >
                     <CustomPhotoUploadInput
                         error={touched.photo && Boolean(errors.photo)}
-                        {...fieldProps.photo}
+                        {...fieldsInputProps.photo}
                         value={values.photo}
                         selectedPhoto={selectedPhoto.name}
                         onBlur={handleBlur}
@@ -174,6 +174,7 @@ const FormRegister = React.memo(() => {
                         className={classes.previewAvatar}
                     />}
                 </FormControl >
+
                 <Box component='div' className={classes.wrapperButton} >
                     <Button
                         disabled={!isValid}

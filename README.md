@@ -1,3 +1,21 @@
+# Test task for abz.agency
+
+https://abz-agency-task.herokuapp.com/
+
+Author: Vitalii Melnyk
+
+## Technology Stack
+
+- React with React Hooks 
+- React styles & libraries: Material-UI
+- Redux with Redux Hooks
+- Redux-thunk
+- Formik and Yup
+- axios
+- react-input-mask
+- react-toastify
+
+-------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

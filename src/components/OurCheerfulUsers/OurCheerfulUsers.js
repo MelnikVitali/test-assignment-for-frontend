@@ -1,9 +1,6 @@
-// /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 
-import 'react-toastify/dist/ReactToastify.css';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-
 import { Box, Button, CircularProgress, Container, Grid, Typography } from '@material-ui/core';
 
 import { getFirstUsers, getNextUsers } from '../../store/actions/usersActions';
@@ -30,8 +27,7 @@ const OurCheerfulUsers = React.memo(() => {
         dispatch(clearErrors());
 
         dispatch(getFirstUsers(url));
-    }, [   dispatch  ]);
-
+    }, [ dispatch ]);
 
     const handleNextUsersList = () => {
         dispatch(getNextUsers(nextUrl));

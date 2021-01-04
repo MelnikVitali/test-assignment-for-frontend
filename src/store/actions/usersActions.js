@@ -28,7 +28,6 @@ const fetchUsers = (url, actionsType) => async dispatch => {
     }
 };
 
-
 export const getFirstUsers = url => fetchUsers(url, actions.GET_FIRST_USERS, 'data');
 
 export const getNextUsers = url => fetchUsers(url, actions.GET_NEXT_USERS, 'data');

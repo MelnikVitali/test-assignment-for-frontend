@@ -1,4 +1,4 @@
-const fieldProps = {
+const fieldsInputProps = {
     name: {
         id: 'name',
         name: 'name',
@@ -37,4 +37,4 @@ const fieldProps = {
 };
 
 
-export default fieldProps;
+export default fieldsInputProps;

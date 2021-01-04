@@ -31,7 +31,7 @@ const Modal = React.memo(() => {
     useEffect(() => {
 
     }, [ isOpenModal ]);
-    
+
 
     return (
         <div >

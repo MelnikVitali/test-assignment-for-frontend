@@ -33,19 +33,19 @@ const CustomInput = withStyles((theme) => ({
             boxShadow: `${fade(theme.palette.secondary.main, 0.25)} 0 0 0 0.2rem`,
             borderColor: theme.palette.secondary.main,
         },
-        "&:-webkit-autofill": {
+        '&:-webkit-autofill': {
             WebkitBoxShadow: '0 0 0 0 #FFFFFF inset',
             transition: 'background-color 5000s ease-out 0s',
             // boxShadow: `${fade(theme.palette.secondary.main, 0.25)} 0 0 0 0.2rem`,
-            '&:focus':{
+            '&:focus': {
                 WebkitBoxShadow: `${fade(theme.palette.secondary.main, 0.25)} 0 0 0 0.2rem`,
             }
         },
         '&:nth-of-type(3)': {
-            paddingLeft:pxToRem(12)
+            paddingLeft: pxToRem(12)
         },
 
-},
+    },
 }))
 (InputBase);
 

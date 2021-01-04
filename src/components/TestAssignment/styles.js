@@ -21,7 +21,6 @@ const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.up('lg')]: {
             padding: `${pxToRem(106)} ${pxToRem(30)} ${pxToRem(115)}`,
-            // backgroundSize: '100% auto'
         },
     },
     boxContent: {
