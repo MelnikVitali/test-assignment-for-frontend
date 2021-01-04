@@ -21,7 +21,7 @@ ReactDOM.render(
         <Provider store={store} >
             <CssBaseline />
             <App />
-            <ToastContainer />,
+            <ToastContainer />
         </Provider >
     </ThemeProvider >,
     document.getElementById('root')
