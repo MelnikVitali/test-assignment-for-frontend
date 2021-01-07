@@ -4,12 +4,12 @@ import { pxToRem } from '../../../utils/pxToRem';
 
 const useStyles = makeStyles(theme => ({
     gridItem: {
-        marginBottom: pxToRem(35),
+        paddingBottom: pxToRem(35),
         [theme.breakpoints.up('md')]: {
-            marginBottom: pxToRem(55),
+            paddingBottom: pxToRem(55),
         },
         [theme.breakpoints.up('lg')]: {
-            marginBottom: pxToRem(50),
+            paddingBottom: pxToRem(50),
         },
     },
     userContent: {
@@ -19,13 +19,13 @@ const useStyles = makeStyles(theme => ({
     userPhoto: {
         borderRadius: '50%',
         width: pxToRem(70),
-        marginBottom: pxToRem(10)
+        paddingBottom: pxToRem(10)
     },
     userName: {
         wordBreak: 'break-word',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        marginBottom: pxToRem(10)
+        paddingBottom: pxToRem(10)
     },
     userEmail: {
         wordWrap: 'normal',

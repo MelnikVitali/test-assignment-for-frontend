@@ -5,7 +5,7 @@ import { pxToRem } from '../../../utils/pxToRem';
 const CustomInput = withStyles((theme) => ({
     root: {
         'label + &': {
-            marginTop: 30,
+            paddingTop: pxToRem(30),
         },
         '&.Mui-error > .MuiInputBase-input': {
             borderColor: theme.palette.primary.mainHover,
@@ -20,10 +20,10 @@ const CustomInput = withStyles((theme) => ({
         },
     },
     input: {
-        borderRadius: 4,
+        borderRadius: pxToRem(4),
         position: 'relative',
         backgroundColor: theme.palette.common.white,
-        border: `1px solid ${theme.inputBorderColor}`,
+        border: `${pxToRem(1)} solid ${theme.inputBorderColor}`,
         fontFamily: 'PT Sans',
         fontSize: pxToRem(16),
         fontWeight: 400,
@@ -34,9 +34,8 @@ const CustomInput = withStyles((theme) => ({
             borderColor: theme.palette.secondary.main,
         },
         '&:-webkit-autofill': {
-            WebkitBoxShadow: '0 0 0 0 #FFFFFF inset',
+            WebkitBoxShadow: `0 0 0 0 ${theme.backgroundColor} inset`,
             transition: 'background-color 5000s ease-out 0s',
-            // boxShadow: `${fade(theme.palette.secondary.main, 0.25)} 0 0 0 0.2rem`,
             '&:focus': {
                 WebkitBoxShadow: `${fade(theme.palette.secondary.main, 0.25)} 0 0 0 0.2rem`,
             }
@@ -44,7 +43,6 @@ const CustomInput = withStyles((theme) => ({
         '&:nth-of-type(3)': {
             paddingLeft: pxToRem(12)
         },
-
     },
 }))
 (InputBase);

@@ -10,8 +10,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        paddingLeft: pxToRem(7),
-        marginRight: pxToRem(8),
+        padding: `0 ${pxToRem(3)}`,
         color: theme.formRegisterColor,
         [theme.breakpoints.up('sm')]: {
             width: pxToRem(380),
@@ -19,10 +18,11 @@ const useStyles = makeStyles((theme) => ({
             margin: 0
         },
         [theme.breakpoints.up('md')]: {
-            width: pxToRem(466),
-            padding: 0,
-            margin: 0
-        }
+            width: pxToRem(468),
+        },
+        [theme.breakpoints.up('lg')]: {
+            width: pxToRem(467),
+        },
     },
     formControl: {
         position: 'relative',
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
             '& input': {
                 paddingLeft: pxToRem(12)
             }
-        },
+        }
     },
     label: {
         fontSize: pxToRem(21),
@@ -44,47 +44,40 @@ const useStyles = makeStyles((theme) => ({
     },
     helperText: {
         position: 'absolute',
+        paddingTop: pxToRem(4),
         bottom: pxToRem(0),
         left: pxToRem(-1),
         fontFamily: theme.typography.secondaryFontFamily,
-        color: theme.helperText,
         fontSize: pxToRem(12),
+        color: theme.helperText,
         letterSpacing: pxToRem(-0.06),
-        marginTop: pxToRem(4),
         [theme.breakpoints.up('md')]: {
-            fontSize: pxToRem(12),
-            left: pxToRem(1),
             bottom: 0,
+            left: pxToRem(1),
+            fontSize: pxToRem(12),
             letterSpacing: pxToRem(-0.1)
         },
         [theme.breakpoints.up('lg')]: {
-            fontSize: pxToRem(13),
-            bottom: pxToRem(-3),
-            letterSpacing: pxToRem(0.1),
+            bottom: pxToRem(-2),
             left: pxToRem(1),
+            fontSize: pxToRem(13),
+            letterSpacing: pxToRem(0.13),
         }
     },
     previewAvatar: {
-        width: 70,
-        height: 70,
-        marginTop: 10,
+        width: pxToRem(70),
+        height: pxToRem(70),
+        margin: `0 auto`,
     },
     wrapperButton: {
         position: 'relative',
-        marginTop: pxToRem(17),
-        [theme.breakpoints.up('md')]: {
-            marginTop: pxToRem(17),
-        },
-        [theme.breakpoints.up('lg')]: {
-            marginTop: pxToRem(17),
-        },
+        paddingTop: pxToRem(17),
     },
     preloader: {
-        marginBottom: pxToRem(25),
         position: 'absolute',
         top: '50%',
         left: '50%',
-        marginTop: pxToRem(-12),
+        marginTop: pxToRem(-4),
         marginLeft: pxToRem(-12),
     },
     errorMessage: {

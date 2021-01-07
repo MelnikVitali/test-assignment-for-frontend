@@ -49,14 +49,13 @@ const OurCheerfulUsers = React.memo(() => {
             <Typography
                 component='h4'
                 variant='h4'
-                className={classes.titleH4}
             >
                 Attention! Sorting users by registration date
             </Typography >
             <Grid
                 container
                 justify="center"
-                className={classes.gridContainer}
+                className={classes.usersList}
             >
                 {users && users.length > 0 && users.map(user => {
                         return <User key={user.id} user={user} />;

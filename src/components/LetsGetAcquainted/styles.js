@@ -4,31 +4,30 @@ import { pxToRem } from '../../utils/pxToRem';
 
 const useStales = makeStyles(theme => ({
     root: {
-        marginBottom: pxToRem(71),
-        padding: `0 ${pxToRem(14)}`,
+        padding: `${pxToRem(0)} ${pxToRem(14)}  ${pxToRem(71)}`,
         textAlign: 'center',
         [theme.breakpoints.up('sm')]: {
             padding: `0 ${pxToRem(30)}`,
         },
         [theme.breakpoints.up('md')]: {
-            marginBottom: pxToRem(110),
+            paddingBottom: pxToRem(110),
         },
         [theme.breakpoints.up('lg')]: {
-            marginBottom: pxToRem(152),
+            padding: `${pxToRem(154)} ${pxToRem(30)} ${pxToRem(151)}`,
         }
     },
     titleH2: {
-        padding: `${pxToRem(67)} 0 ${pxToRem(25)}`,
+        padding: `${pxToRem(68)} 0 ${pxToRem(25)} ${pxToRem(1)}`,
         letterSpacing: pxToRem(-0.5),
         wordSpacing: pxToRem(2),
         [theme.breakpoints.up('md')]: {
-            padding: `${pxToRem(110)} 0 ${pxToRem(68)}`,
+            padding: `${pxToRem(110)} 0 ${pxToRem(68)} ${pxToRem(1)}`,
             fontSize: pxToRem(40),
             letterSpacing: pxToRem(-0.6),
             wordSpacing: pxToRem(1)
         },
         [theme.breakpoints.up('lg')]: {
-            padding: `${pxToRem(154)} 0 ${pxToRem(68)}`,
+            padding: `0 0 ${pxToRem(69)} ${pxToRem(1)}`,
             fontSize: pxToRem(50),
             letterSpacing: pxToRem(-1),
             wordSpacing: pxToRem(2.5)
@@ -42,13 +41,9 @@ const useStales = makeStyles(theme => ({
             textAlign: 'left'
         },
     },
-    gridItemContent: {
-        [theme.breakpoints.up('md')]: {
-            textAlign: 'left',
-            marginLeft: `${pxToRem(30)} !important`,
-        },
+    wrapperImg: {
         [theme.breakpoints.up('lg')]: {
-            marginLeft: `${pxToRem(49)} !important`,
+            padding: `${pxToRem(5)} 0 0 ${pxToRem(25)}`,
         }
     },
     img: {
@@ -61,28 +56,36 @@ const useStales = makeStyles(theme => ({
         [theme.breakpoints.up('lg')]: {
             width: pxToRem(340),
             height: pxToRem(285),
-            marginLeft: pxToRem(25),
-            marginTop: pxToRem(4)
         }
     },
+    gridItemContent: {
+        [theme.breakpoints.up('md')]: {
+            textAlign: 'left',
+            paddingLeft: `${pxToRem(30)}`,
+        },
+        [theme.breakpoints.up('lg')]: {
+            paddingLeft: `${pxToRem(49)}`,
+        }
+    },
+
     titleH3: {
-        margin: `${pxToRem(30)} 0 ${pxToRem(20)}`,
+        padding: `${pxToRem(31)} 0 ${pxToRem(19)}`,
         textAlign: 'center',
         [theme.breakpoints.up('md')]: {
-            margin: `${pxToRem(-4)} 0 ${pxToRem(20)}`,
+            marginTop: pxToRem(-4),
+            padding: `0 0 ${pxToRem(19)}`,
             textAlign: 'left',
         },
         [theme.breakpoints.up('lg')]: {
-            margin: `0 0 ${pxToRem(18)}`,
-            textAlign: 'left',
+            margin: 0,
         }
     },
     textBlock: {
         letterSpacing: pxToRem(-0.097),
-        marginBottom: pxToRem(24),
+        paddingBottom: pxToRem(24),
         textAlign: 'justify',
         [theme.breakpoints.up('md')]: {
-            marginBottom: pxToRem(24),
+            paddingBottom: pxToRem(24),
         },
         [theme.breakpoints.up('lg')]: {
             letterSpacing: pxToRem(-0.03),
