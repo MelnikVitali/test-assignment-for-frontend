@@ -7,7 +7,7 @@ import menuIcon from '../../../assets/menu-icon.svg';
 
 const useStyles = makeStyles(theme => ({
     drawerContainer: {
-        width: 290,
+        width: pxToRem(290),
     },
     logoLink: {
         height: pxToRem(40),
@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     },
     navList: {
         height: pxToRem(245),
-        padding: `${pxToRem(5)} 0 ${pxToRem(5)} ${pxToRem(14)}`,
+        padding: `${pxToRem(12)} 0 ${pxToRem(11)} ${pxToRem(15)}`,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-evenly',

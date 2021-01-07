@@ -27,44 +27,36 @@ const useStyles = makeStyles(theme => ({
         zIndex: 2
     },
     title: {
-        margin: `0 ${pxToRem(11)}`,
+        padding: `0 ${pxToRem(11)}`,
         maxWidth: pxToRem(472),
         [theme.breakpoints.up('md')]: {
-            margin: 0,
+            padding: 0,
             maxWidth: pxToRem(420),
             fontSize: pxToRem(40),
             lineHeight: pxToRem(44),
-            letterSpacing: pxToRem(-0.4),
+            wordSpacing: pxToRem(1),
         },
         [theme.breakpoints.up('lg')]: {
             maxWidth: pxToRem(510),
+            paddingTop: pxToRem(1),
             fontSize: pxToRem(50),
             lineHeight: pxToRem(54),
-            letterSpacing: pxToRem(-0.6),
+            wordSpacing: pxToRem(3),
+            letterSpacing: pxToRem(-0.7),
         },
     },
     subtitle: {
         minWidth: pxToRem(330),
         maxWidth: pxToRem(600),
-        marginTop: pxToRem(20),
+        padding: `${pxToRem(19)} 0 ${pxToRem(24)}`,
 
         [theme.breakpoints.up('md')]: {
             maxWidth: pxToRem(450),
-            marginTop: pxToRem(28),
+            padding: `${pxToRem(28)} 0 ${pxToRem(34)}`,
         },
         [theme.breakpoints.up('lg')]: {
             maxWidth: pxToRem(530),
-            marginTop: pxToRem(27),
-            marginLeft: pxToRem(1),
-        },
-    },
-    btn: {
-        marginTop: pxToRem(24),
-        [theme.breakpoints.up('md')]: {
-            marginTop: pxToRem(34),
-        },
-        [theme.breakpoints.up('lg')]: {
-            marginTop: pxToRem(34),
+            padding: `${pxToRem(25)} 0  ${pxToRem(34)}`,
         },
     }
 }));

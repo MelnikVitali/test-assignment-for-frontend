@@ -21,9 +21,9 @@ const useStyles = makeStyles(theme => ({
         },
     },
     logoLink: {
-        marginTop: pxToRem(7),
+        paddingTop: pxToRem(7),
         [theme.breakpoints.up('md')]: {
-            marginTop: pxToRem(4),
+            paddingTop: pxToRem(4),
         },
     },
     logoImg: {
@@ -40,8 +40,8 @@ const useStyles = makeStyles(theme => ({
     },
     listItem: {
         width: 'inherit',
-        marginLeft: pxToRem(29),
-        padding: 0,
+        paddingBottom: pxToRem(2),
+        paddingLeft: pxToRem(29),
         display: 'inline-block',
         overflow: 'hidden',
         borderRadius: pxToRem(8),
@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
             transition: 'color .3s ease',
         },
         '&:nth-last-child(2)': {
-            marginLeft: pxToRem(28)
+            paddingLeft: pxToRem(28)
         }
     }
 }));

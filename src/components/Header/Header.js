@@ -46,7 +46,6 @@ const Header = React.memo(() => {
                             <ListItem
                                 component='li'
                                 key={title}
-                                button
                                 className={[
                                     classes.listItem,
                                     selectedIndex === index ? classes.selected : ''

@@ -4,16 +4,22 @@ import { pxToRem } from '../../utils/pxToRem';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: `0 ${pxToRem(16)}`,
+        padding: `0 ${pxToRem(16)} ${pxToRem(80)}`,
         backgroundColor: theme.backgroundColor2,
         textAlign: 'center',
         overflow: 'hidden',
+        [theme.breakpoints.up('md')]: {
+            paddingBottom: pxToRem(122),
+        },
+        [theme.breakpoints.up('lg')]: {
+            paddingBottom: pxToRem(161),
+        },
 
     },
     titleH2: {
-        padding: `${pxToRem(67)} 0 ${pxToRem(3)}`,
+        padding: `${pxToRem(68)} 0 ${pxToRem(2)} ${pxToRem(1)} `,
         [theme.breakpoints.up('md')]: {
-            padding: `${pxToRem(111)} 0 ${pxToRem(17)}`,
+            padding: `${pxToRem(112)} 0 ${pxToRem(16)}`,
             fontSize: pxToRem(40),
         },
         [theme.breakpoints.up('lg')]: {
@@ -21,22 +27,14 @@ const useStyles = makeStyles(theme => ({
             fontSize: pxToRem(50),
         }
     },
-    titleH4: {
-        marginBottom: pxToRem(37),
+    usersList: {
+        paddingTop: pxToRem(37),
         [theme.breakpoints.up('md')]: {
-            marginBottom: pxToRem(77),
+            paddingTop: pxToRem(77),
         },
     },
     wrapperButton: {
         position: 'relative',
-        marginBottom: pxToRem(80),
-        [theme.breakpoints.up('md')]: {
-            marginBottom: pxToRem(122),
-        },
-        [theme.breakpoints.up('lg')]: {
-            marginTop: 0,
-            marginBottom: pxToRem(161),
-        },
     },
     btn: {
         padding: `${pxToRem(4.5)} ${pxToRem(61)}`,

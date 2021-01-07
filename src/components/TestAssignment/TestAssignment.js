@@ -23,7 +23,7 @@ const TestAssignment = React.memo(() => {
 
             <Box component='div' className={classes.boxContent} >
                 <Typography component='h1' variant='h1' className={classes.title} >
-                    Test <Box component='span' style={{ paddingLeft: 3 }} >assignment</Box > for Frontend Developer
+                    Test assignment for Frontend Developer
                     position
                 </Typography >
                 <Hidden smDown >

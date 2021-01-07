@@ -3,22 +3,22 @@ const fieldsInputProps = {
         id: 'name',
         name: 'name',
         type: 'text',
-        autoComplete: 'name',
         placeholder: 'Your name',
+        autoComplete: 'off',
     },
     email: {
         id: 'email',
         name: 'email',
         type: 'email',
         placeholder: 'Your email',
-        autoComplete: 'email',
+        autoComplete: 'off',
     },
     phone: {
         id: 'phone',
         name: 'phone',
         type: 'tel',
         placeholder: '+380 XX XXX XX XX',
-        autoComplete: 'phone',
+        autoComplete: 'off',
     },
 
     positions: {

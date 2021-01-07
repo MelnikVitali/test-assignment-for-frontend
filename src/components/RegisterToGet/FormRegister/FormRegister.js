@@ -127,7 +127,6 @@ const FormRegister = React.memo(() => {
                         maskChar='_'
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        autoComplete='phone'
                         style={{ paddingLeft: 12 }}
                     >
                         {() => <CustomInput
@@ -166,14 +165,14 @@ const FormRegister = React.memo(() => {
                             {errors.photo}
                         </FormHelperText >
                         : null}
-                    {!(errors.photo) && selectedPhoto.url && <Avatar
-                        data-aos="zoom-in"
-                        data-aos-duration="700"
-                        alt={selectedPhoto.name}
-                        src={selectedPhoto.url}
-                        className={classes.previewAvatar}
-                    />}
                 </FormControl >
+                {!(errors.photo) && selectedPhoto.url && <Avatar
+                    data-aos="zoom-in"
+                    data-aos-duration="700"
+                    alt={selectedPhoto.name}
+                    src={selectedPhoto.url}
+                    className={classes.previewAvatar}
+                />}
 
                 <Box component='div' className={classes.wrapperButton} >
                     <Button

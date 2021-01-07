@@ -5,26 +5,33 @@ import { pxToRem } from '../../../utils/pxToRem';
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
+        padding: `${pxToRem(19)} 0 ${pxToRem(7)}`,
         textAlign: 'left',
-        marginTop: pxToRem(22),
-        marginBottom: 7,
+        [theme.breakpoints.up('md')]: {
+            paddingTop: pxToRem(19),
+        },
         [theme.breakpoints.up('lg')]: {
-            marginTop: pxToRem(24),
+            paddingTop: pxToRem(19),
         }
     },
     label: {
+        paddingTop: pxToRem(22),
+        paddingBottom: 0,
         fontFamily: theme.typography.secondaryFontFamily,
         color: theme.palette.primary.contrastText,
-        marginBottom: 19,
+        [theme.breakpoints.up('lg')]: {
+            paddingTop: pxToRem(23),
+        },
         letterSpacing: -0.1,
         '&:last-child': {
-            marginBottom: 3
+            paddingBottom: pxToRem(3)
         }
     },
     formControl: {
+        margin: 0,
+        paddingBottom: pxToRem(6),
         fontFamily: theme.typography.secondaryFontFamily,
         color: theme.palette.primary.contrastText,
-        margin: '0 0 6px',
     }
 }));
 

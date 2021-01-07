@@ -10,37 +10,34 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         textAlign: 'center',
         overflow: 'hidden',
-        marginBottom: pxToRem(81),
+        paddingBottom: pxToRem(81),
         [theme.breakpoints.up('md')]: {
-            marginLeft: pxToRem(4),
-            marginBottom: pxToRem(119),
+            padding: `${pxToRem(108)} ${pxToRem(119)} ${pxToRem(119)} ${pxToRem(128)}`,
         },
         [theme.breakpoints.up('lg')]: {
-            marginLeft: 0,
-            marginBottom: pxToRem(165),
+            padding: `${pxToRem(152)} ${pxToRem(165)} ${pxToRem(165)}`,
         }
     },
     titleH2: {
-        margin: `${pxToRem(68)} 0 ${pxToRem(11)}`,
         [theme.breakpoints.up('md')]: {
-            margin: `${pxToRem(107)} 0 ${pxToRem(14)}`,
             fontSize: pxToRem(40),
         },
         [theme.breakpoints.up('lg')]: {
-            margin: `${pxToRem(152)} 0 ${pxToRem(19)}`,
             fontSize: pxToRem(50),
         }
     },
     titleH4: {
         maxWidth: 460,
         lineHeight: pxToRem(22),
-        marginBottom: pxToRem(31),
-        padding: `0 ${pxToRem(16)}`,
+        padding: `${pxToRem(11)} ${pxToRem(17)} ${pxToRem(31)}`,
         [theme.breakpoints.up('md')]: {
-            lineHeight: pxToRem(24),
-            padding: 0,
-            marginBottom: pxToRem(29),
+            padding: `${pxToRem(16)} 0 ${pxToRem(31)}`,
+            lineHeight: pxToRem(22),
         },
+        [theme.breakpoints.up('lg')]: {
+            padding: `${pxToRem(19)} 0 ${pxToRem(30)}`,
+            lineHeight: pxToRem(24),
+        }
     },
 }));
 

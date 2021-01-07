@@ -156,7 +156,8 @@ const theme = createMuiTheme({
         },
         MuiListItem: {
             gutters: {
-                padding: '0 !important'
+                paddingRight: 0,
+                paddingLeft: 0,
             },
         },
         MuiButton: {
@@ -202,11 +203,12 @@ const theme = createMuiTheme({
         PrivateSwitchBase: {
             root: {
                 padding: 0,
-                marginRight: 8
+                paddingRight: 8
             }
         },
         MuiFormHelperText: {
             root: {
+                marginTop: 0,
                 '&.Mui-error': {
                     color: '#db3445'
                 }
