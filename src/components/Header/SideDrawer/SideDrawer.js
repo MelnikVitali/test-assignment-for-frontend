@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import {
     Box,
     Drawer,
-    IconButton, Link,
+    IconButton,
+    Link,
     List,
     ListItem,
 } from '@material-ui/core';
@@ -25,8 +26,7 @@ const SideDrawer = React.memo(({ window }) => {
         firstDrawerList,
         secondDrawerList,
         thirdDrawerList
-    }
-        = mobileNavLinks;
+    } = mobileNavLinks;
 
     const toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -49,7 +49,9 @@ const SideDrawer = React.memo(({ window }) => {
             >
                 <img src={logo} alt="TESTTASK" className={classes.logoImg} />
             </Link >
+
             <Divider />
+
             <List component="nav" className={classes.navList} >
                 {firstDrawerList.map(({ title, path }) => (
                     <ListItem component='li'
@@ -66,7 +68,9 @@ const SideDrawer = React.memo(({ window }) => {
                     </ListItem >
                 ))}
             </List >
+
             <Divider />
+
             <List component="nav" className={classes.navList} >
                 {secondDrawerList.map(({ title, path }) => (
                     <ListItem component='li'
@@ -83,7 +87,9 @@ const SideDrawer = React.memo(({ window }) => {
                     </ListItem >
                 ))}
             </List >
+
             <Divider />
+
             <List component="nav" className={classes.navList} >
                 {thirdDrawerList.map(({ title, path }) => (
                     <ListItem component='li'

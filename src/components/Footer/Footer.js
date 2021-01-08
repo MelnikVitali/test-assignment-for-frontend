@@ -9,15 +9,14 @@ const Footer = () => {
 
     return (
         <Container
-            component='section'
+            component='footer'
             maxWidth={false}
             className={classes.root}
         >
             <Divider />
             <Typography className={classes.text} >
-                © abz.agency specially for the test task
+                &copy; abz.agency specially for the test task
             </Typography >
-
         </Container >
     );
 };

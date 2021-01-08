@@ -3,7 +3,7 @@ import AOS from 'aos';
 
 import Header from '../Header';
 import TestAssignment from '../TestAssignment';
-import LetsGetAcquainted from '../LetsGetAcquainted/LetsGetAcquainted';
+import LetsGetAcquainted from '../LetsGetAcquainted';
 import OurCheerfulUsers from '../OurCheerfulUsers';
 import RegisterToGet from '../RegisterToGet';
 import Footer from '../Footer';
@@ -14,6 +14,7 @@ const App = React.memo(() => {
     useEffect(() => {
         AOS.init({
             offset: 80,
+            duration: 700
         });
     }, []);
 

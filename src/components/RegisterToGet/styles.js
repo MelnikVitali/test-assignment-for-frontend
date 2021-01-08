@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     titleH4: {
-        maxWidth: 460,
+        maxWidth: pxToRem(460),
         lineHeight: pxToRem(22),
         padding: `${pxToRem(11)} ${pxToRem(17)} ${pxToRem(31)}`,
         [theme.breakpoints.up('md')]: {

@@ -14,7 +14,6 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('lg')]: {
             paddingBottom: pxToRem(161),
         },
-
     },
     titleH2: {
         padding: `${pxToRem(68)} 0 ${pxToRem(2)} ${pxToRem(1)} `,

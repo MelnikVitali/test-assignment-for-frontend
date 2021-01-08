@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 
-const phoneRegExp = /^\+380 [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}$/; //validate phone
+const PHONE_REG_EXP = /^\+380 [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}$/; //validate phone
+
 const FILE_SIZE = 5 * 1024 * 1024;
 const SUPPORTED_FORMATS = [
     'image/jpg',
@@ -17,7 +18,7 @@ const validationSchema = Yup.object({
         .email('Invalid email format'),
     phone: Yup.string()
         .required('Enter your phone')
-        .matches(phoneRegExp, 'Phone number is not valid'),
+        .matches(PHONE_REG_EXP, 'Phone number is not valid'),
     position: Yup.string()
         .required('Select your position'),
     photo: Yup.mixed()
@@ -33,17 +34,28 @@ const validationSchema = Yup.object({
             value => value && SUPPORTED_FORMATS.includes(value.type)
         )
         .test(
-            'fileSizes',
+            'fileResolution',
             'Photo with resolution at least 70x70px',
             value => {
                 if (value) {
                     return new Promise(resolve => {
                         const img = new Image();
                         img.src = window.URL.createObjectURL(value);
+
                         img.onload = () => {
                             URL.revokeObjectURL(img.src);
 
                             return resolve(img.width >= 70 && img.height >= 70);
+                        };
+
+                        img.onerror = () => {
+                            return resolve(
+                                new Yup.ValidationError(
+                                    'Image loading error',
+                                    null,
+                                    'photo'
+                                )
+                            );
                         };
                     });
                 }

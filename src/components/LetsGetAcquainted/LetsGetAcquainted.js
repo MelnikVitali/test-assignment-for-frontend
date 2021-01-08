@@ -17,14 +17,15 @@ const LetsGetAcquainted = () => {
             <Typography component='h2' variant='h2' className={classes.titleH2} >
                 Let's get acquainted
             </Typography >
+
             <Grid container className={classes.gridContainer} >
                 <Grid
                     item
                     data-aos="zoom-in"
-                    data-aos-duration="700"
                     className={classes.wrapperImg} >
                     <img src={manLaptopImg} alt='man with laptop' className={classes.img} />
                 </Grid >
+
                 <Grid item className={classes.gridItemContent} >
                     <Typography component='h3' variant='h3' className={classes.titleH3} >
                         I am cool frontend developer
@@ -38,6 +39,7 @@ const LetsGetAcquainted = () => {
                         bonus points. If you use any task runner (gulp/webpack) you will get bonus points as well. Slice
                         service directory page P​SD mockup​ into HTML5/CSS3.
                     </Typography >
+
                     <Button
                         href='#sign-up'
                         color='primary'
@@ -45,7 +47,6 @@ const LetsGetAcquainted = () => {
                     >
                         Sing up now
                     </Button >
-
                 </Grid >
             </Grid >
         </Container >

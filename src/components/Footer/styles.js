@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+
 import { pxToRem } from '../../utils/pxToRem';
 
 const useStyles = makeStyles(theme => ({
@@ -7,7 +8,7 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         padding: 0,
         overflow: 'hidden',
-        borderTop: `${pxToRem(1)} solid ${theme.footerBorderColor}`,
+        borderTop: `1px solid ${theme.footerBorderColor}`,
     },
     text: {
         padding: `${pxToRem(16)} 0`,
@@ -16,7 +17,7 @@ const useStyles = makeStyles(theme => ({
             marginLeft: pxToRem(10),
         },
         [theme.breakpoints.up('lg')]: {
-            marginLeft: pxToRem(0)
+            marginLeft: 0
         }
     }
 }));

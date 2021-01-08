@@ -3,10 +3,12 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import { APIUrls } from '../../configs/APIUrls';
+import { MOBILE_MAX_WIDTH } from '../../constans/mobileMaxWidth';
+
 import * as actions from './types';
 import { getFirstUsers } from './usersActions';
 
-const urlGetUsers = window.innerWidth < 600 ?
+const urlGetUsers = window.innerWidth < MOBILE_MAX_WIDTH ?
     APIUrls.getUsersMobileStartPage :
     APIUrls.getUsersTabletStartPage;
 
@@ -42,6 +44,7 @@ export const addNewUser = (body, config, resetForm, setSelectedPhoto, initialSta
         const res = await axios.post(APIUrls.addNewUser, body, config);
 
         dispatch(toggleIsFetching(false));
+
         if (res) {
             dispatch(toggleModal(true));
 

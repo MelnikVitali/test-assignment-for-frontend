@@ -67,7 +67,6 @@ const useStales = makeStyles(theme => ({
             paddingLeft: `${pxToRem(49)}`,
         }
     },
-
     titleH3: {
         padding: `${pxToRem(31)} 0 ${pxToRem(19)}`,
         textAlign: 'center',

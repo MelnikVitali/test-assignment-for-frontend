@@ -7,7 +7,7 @@ const useStyles = makeStyles(theme => ({
         left: 0,
         top: 0,
         objectFit: 'cover',
-        zIndex:'-1'
+        zIndex: theme.testAssignmentBannerBackgroundZIndex
     },
 }));
 

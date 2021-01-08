@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
     Box,
@@ -17,21 +17,19 @@ import { toggleModal } from '../../store/actions/registrationActions';
 
 import useStyles from './styles';
 
-const Modal = React.memo(() => {
+const Modal = () => {
     const classes = useStyles();
 
     const dispatch = useDispatch();
 
-    const { isOpenModal } = useSelector(state => state.registrationReducer, shallowEqual);
+    const { isOpenModal } = useSelector(state => state.registrationReducer);
 
     const handleClose = () => {
         dispatch(toggleModal(false));
     };
 
     useEffect(() => {
-
     }, [ isOpenModal ]);
-
 
     return (
         <div >
@@ -43,13 +41,17 @@ const Modal = React.memo(() => {
                         <CloseIcon className={classes.closeIcon} />
                     </IconButton >
                 </Box >
+
                 <Divider />
+
                 <DialogContent className={classes.content} >
                     <Typography >
                         You have successfully passed the registration
                     </Typography >
                 </DialogContent >
+
                 <Divider />
+
                 <DialogActions className={classes.wrapperBtn} >
                     <Button variant='contained' onClick={handleClose} color="primary" className={classes.btn} >
                         Great
@@ -58,6 +60,6 @@ const Modal = React.memo(() => {
             </Dialog >
         </div >
     );
-});
+};
 
 export default Modal;
