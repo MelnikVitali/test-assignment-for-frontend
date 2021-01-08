@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => ({
     userPhoto: {
         borderRadius: theme.circleBorderRadius,
         width: pxToRem(70),
+        height: pxToRem(70),
         paddingBottom: pxToRem(10)
     },
     userName: {

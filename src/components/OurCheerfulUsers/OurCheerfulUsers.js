@@ -49,7 +49,7 @@ const OurCheerfulUsers = () => {
                 Our cheerful users
             </Typography >
             <Typography
-                component='h4'
+                component='h3'
                 variant='h4'
             >
                 Attention! Sorting users by registration date

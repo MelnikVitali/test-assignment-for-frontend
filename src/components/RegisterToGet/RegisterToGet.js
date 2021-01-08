@@ -24,7 +24,7 @@ const RegisterToGet = () => {
                 Register to get a work
             </Typography >
             <Typography
-                component='h4'
+                component='h3'
                 variant='h4'
                 className={classes.titleH4}
             >
