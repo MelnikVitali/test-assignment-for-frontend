@@ -1,4 +1,3 @@
-
 export const OpenSansRegular = {
     fontFamily: 'Open Sans',
     fontStyle: 'normal',

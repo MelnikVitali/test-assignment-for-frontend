@@ -4,13 +4,13 @@ import { pxToRem } from '../../../utils/pxToRem';
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        width: '100%',
+        padding: `0 ${pxToRem(3)}`,
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
-        width: '100%',
-        padding: `0 ${pxToRem(3)}`,
         color: theme.formRegisterColor,
         [theme.breakpoints.up('sm')]: {
             width: pxToRem(380),
@@ -44,9 +44,9 @@ const useStyles = makeStyles((theme) => ({
     },
     helperText: {
         position: 'absolute',
-        paddingTop: pxToRem(4),
-        bottom: pxToRem(0),
+        bottom: 0,
         left: pxToRem(-1),
+        paddingTop: pxToRem(4),
         fontFamily: theme.typography.secondaryFontFamily,
         fontSize: pxToRem(12),
         color: theme.helperText,
@@ -85,6 +85,5 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: pxToRem(20),
     },
 }));
-
 
 export default useStyles;

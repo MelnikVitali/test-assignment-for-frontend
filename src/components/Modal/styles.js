@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { pxToRem } from '../../utils/pxToRem';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
     modalTitle: {
         padding: `${pxToRem(13)} ${pxToRem(15)} ${pxToRem(18)}`,
         fontSize: pxToRem(24),

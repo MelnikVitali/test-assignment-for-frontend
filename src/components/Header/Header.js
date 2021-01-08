@@ -17,7 +17,7 @@ import SideDrawer from './SideDrawer';
 
 import useStyles from './styles';
 
-const Header = React.memo(() => {
+const Header = () => {
     const classes = useStyles();
 
     const [ selectedIndex, setSelectedIndex ] = useState(null);
@@ -36,6 +36,7 @@ const Header = React.memo(() => {
                 >
                     <img src={logo} alt="TESTTASK" className={classes.logoImg} />
                 </Link >
+
                 <Hidden mdDown >
                     <List
                         component="nav"
@@ -61,12 +62,13 @@ const Header = React.memo(() => {
                         ))}
                     </List >
                 </Hidden >
+
                 <Hidden lgUp >
                     <SideDrawer implementation="css" />
                 </Hidden >
             </Toolbar >
         </AppBar >
     );
-});
+};
 
 export default Header;

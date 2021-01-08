@@ -20,7 +20,6 @@ const fieldsInputProps = {
         placeholder: '+380 XX XXX XX XX',
         autoComplete: 'off',
     },
-
     positions: {
         id: 'position',
         label: 'Select your position',
@@ -35,6 +34,5 @@ const fieldsInputProps = {
         placeholder: 'Upload your photo',
     }
 };
-
 
 export default fieldsInputProps;

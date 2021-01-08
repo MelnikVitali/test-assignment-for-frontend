@@ -6,13 +6,15 @@ import { Box, Button, CircularProgress, Container, Grid, Typography } from '@mat
 import { getFirstUsers, getNextUsers } from '../../store/actions/usersActions';
 import { clearErrors } from '../../store/actions/errorActions';
 
+import { MOBILE_MAX_WIDTH } from '../../constans/mobileMaxWidth';
+
 import { APIUrls } from '../../configs/APIUrls';
 
 import User from './User';
 
 import useStyles from './styles';
 
-const OurCheerfulUsers = React.memo(() => {
+const OurCheerfulUsers = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
@@ -20,7 +22,7 @@ const OurCheerfulUsers = React.memo(() => {
     const isFetching = useSelector(store => store.toggleIsFetchingReducer.isFetching);
 
     useEffect(() => {
-        const url = window.innerWidth < 600 ?
+        const url = window.innerWidth < MOBILE_MAX_WIDTH ?
             APIUrls.getUsersMobileStartPage :
             APIUrls.getUsersTabletStartPage;
 
@@ -52,6 +54,7 @@ const OurCheerfulUsers = React.memo(() => {
             >
                 Attention! Sorting users by registration date
             </Typography >
+
             <Grid
                 container
                 justify="center"
@@ -64,7 +67,7 @@ const OurCheerfulUsers = React.memo(() => {
             </Grid >
 
             <Box component='div' className={classes.wrapperButton} >
-                {nextUrl && nextUrl[0] && (new URL(nextUrl).searchParams.get('page') <= total_pages) &&
+                {nextUrl && (new URL(nextUrl).searchParams.get('page') <= total_pages) &&
                 <Button
                     variant='contained'
                     color='primary'
@@ -82,6 +85,6 @@ const OurCheerfulUsers = React.memo(() => {
             </Box >
         </Container >
     );
-});
+};
 
 export default OurCheerfulUsers;

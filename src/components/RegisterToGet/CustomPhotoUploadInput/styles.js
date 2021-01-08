@@ -13,11 +13,11 @@ const useStyles = makeStyles(theme => ({
         width: 0,
         padding: `${pxToRem(8)} 0`,
         margin: 0,
-        zIndex: 2,
+        zIndex:  theme.photoUploadInputZIndex,
         opacity: 0,
         '&:focus~label': {
             transition: theme.transitions.create([ 'border-color', 'box-shadow' ]),
-            boxShadow: `${fade(theme.palette.secondary.main, 0.25)} 0 0 0 0.2rem`,
+            boxShadow: `${fade(theme.palette.secondary.main, 0.25)} 0 0 0 ${pxToRem(3.2)}`,
             borderColor: theme.palette.secondary.main,
         },
         '&.Mui-error:focus~label': {
@@ -43,10 +43,10 @@ const useStyles = makeStyles(theme => ({
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        border: `${pxToRem(1)} solid ${theme.inputBorderColor}`,
+        border: `1px solid ${theme.inputBorderColor}`,
         transition: theme.transitions.create([ 'border-color', 'box-shadow' ]),
-        zIndex: 1,
-        '&::After': {
+        zIndex: theme.photoUploadLabelZIndex,
+        '&::after': {
             content: '"Browse"',
             width: pxToRem(81),
             paddingBottom: pxToRem(3),
@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
             fontSize: pxToRem(16),
             color: theme.formRegisterColor,
             cursor: 'pointer',
-            zIndex: 3,
+            zIndex: theme.photoUploadLabelButtonZIndex,
         },
     },
     error: {

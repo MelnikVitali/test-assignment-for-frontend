@@ -17,7 +17,6 @@ const User = React.memo(({ user }) => {
             xs={12}
             sm={6}
             data-aos="zoom-in"
-            data-aos-duration="700"
             className={classes.gridItem}
         >
             <Box component='div' className={classes.userContent} >
@@ -29,6 +28,7 @@ const User = React.memo(({ user }) => {
                         e.target.src = defaultAvatar;
                     }}
                 />
+
                 <Typography
                     component='h3'
                     variant='h3'
@@ -42,6 +42,7 @@ const User = React.memo(({ user }) => {
                 >
                     {user.position}
                 </Typography >
+
                 <Link href={`mailto:${user.email}`} >
                     <Tooltip title={user.email} >
                         <Typography
@@ -53,6 +54,7 @@ const User = React.memo(({ user }) => {
                         </Typography >
                     </Tooltip >
                 </Link >
+
                 <Link href={`tel:${user.phone}`} >
                     <Typography
                         component='p'

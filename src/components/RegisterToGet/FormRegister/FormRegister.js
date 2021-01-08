@@ -16,16 +16,18 @@ import {
 import validationSchema from '../../../utils/validationSchema';
 import fieldsInputProps from '../../../utils/fieldsInputProps';
 
-import CustomInput from '../CustomInput';
-import SelectYourPosition from '../SelectYourPosition';
-import CustomPhotoUploadInput from '../CustomPhotoUploadInput';
+import { addNewUser, getPositions, getToken } from '../../../store/actions/registrationActions';
+
 import Modal from '../../Modal';
 
-import { addNewUser, getPositions, getToken } from '../../../store/actions/registrationActions';
+import CustomInput from '../CustomInput';
+import SelectYourPosition from '../SelectYourPosition';
+
+import CustomPhotoUploadInput from '../CustomPhotoUploadInput';
 
 import useStyles from './styles';
 
-const FormRegister = React.memo(() => {
+const FormRegister = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
@@ -51,22 +53,28 @@ const FormRegister = React.memo(() => {
     };
 
     const {
-        handleSubmit, handleChange, setFieldValue,
-        handleBlur, values, errors, isValid, touched, resetForm
+        handleSubmit,
+        handleChange,
+        setFieldValue,
+        handleBlur,
+        values,
+        errors,
+        isValid,
+        touched,
+        resetForm
     } = useFormik({
         enableReinitialize: true,
         initialValues: formikInitialValues,
         validationSchema: validationSchema,
         onSubmit: values => {
             const editedPhone = values.phone.split(' ').join(''); // delete spaces from phone
-            const fileField = document.querySelector('input[type="file"]');
 
             const formData = new FormData();
             formData.append('name', values.name);
             formData.append('email', values.email);
             formData.append('phone', editedPhone);
             formData.append('position_id', values.position);
-            formData.append('photo', fileField.files[0]);
+            formData.append('photo', values.photo);
 
             const config = { headers: { 'Token': `${token}` } };
 
@@ -75,14 +83,15 @@ const FormRegister = React.memo(() => {
     });
 
     const handleChangePhotoUpload = (event) => {
-        setFieldValue('photo', event.currentTarget.files[0]);
+        setFieldValue('photo', event.target.files[0]);
 
         if (event.target && event.target.files[0]) {
             const name = event.target.files[0].name;
-            const url = URL.createObjectURL(event.currentTarget.files[0]);
+            const url = URL.createObjectURL(event.target.files[0]);
 
             return setSelectedPhoto({ url, name });
         }
+
         return setSelectedPhoto(initialState);
     };
 
@@ -168,7 +177,6 @@ const FormRegister = React.memo(() => {
                 </FormControl >
                 {!(errors.photo) && selectedPhoto.url && <Avatar
                     data-aos="zoom-in"
-                    data-aos-duration="700"
                     alt={selectedPhoto.name}
                     src={selectedPhoto.url}
                     className={classes.previewAvatar}
@@ -194,6 +202,6 @@ const FormRegister = React.memo(() => {
             <Modal />
         </>
     );
-});
+};
 
 export default FormRegister;

@@ -1,21 +1,24 @@
 {
   "name": "test_assignment",
   "version": "0.1.0",
-  "description": "abz.agency - test task",
   "author": "Vitalii Melnyk",
+  "description": "abz.agency - test task",
   "license": "ISC",
   "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/MelnikVitali/abz_agency_task"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "aos": "^2.3.4",
     "axios": "^0.21.0",
     "formik": "^2.2.6",
@@ -26,16 +29,15 @@
     "react-scripts": "^3.4.3",
     "react-toastify": "^6.2.0",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "web-vitals": "^1.0.1",
     "yup": "^0.32.8"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "redux-devtools-extension": "^2.13.8",
+    "web-vitals": "^1.0.1"
   },
   "eslintConfig": {
     "extends": "react-app"

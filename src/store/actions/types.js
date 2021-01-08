@@ -10,4 +10,3 @@ export const GET_TOKEN = 'GET_TOKEN';
 export const GET_POSITIONS = 'GET_POSITIONS';
 
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
-

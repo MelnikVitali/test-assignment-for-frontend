@@ -4,7 +4,7 @@ import { Radio } from '@material-ui/core';
 
 import useStyles from './styles';
 
-const CustomRadio = (props) => {
+const CustomRadio = React.memo((props) => {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const CustomRadio = (props) => {
             {...props}
         />
     );
-};
+});
 
 export default CustomRadio;

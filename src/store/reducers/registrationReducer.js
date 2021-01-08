@@ -3,7 +3,7 @@ import * as actions from '../actions/types';
 const initialState = {
     token: '',
     positions: [],
-    isOpenModal: false,
+    isOpenModal: false
 };
 
 export default (state = initialState, action) => {
@@ -27,4 +27,3 @@ export default (state = initialState, action) => {
             return state;
     }
 };
-

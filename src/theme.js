@@ -54,6 +54,12 @@ const theme = createMuiTheme({
     formRegisterColor: '#212529',
     helperText: '#6c757d',
     footerBorderColor: '#ececec',
+    circleBorderRadius: '50%',
+    testAssignmentBannerBackgroundZIndex: '-1',
+    testAssignmentBlockZIndex: 2,
+    photoUploadInputZIndex: 2,
+    photoUploadLabelZIndex: 1,
+    photoUploadLabelButtonZIndex: 3,
     overrides: {
         MuiCssBaseline: {
             '@global': {
@@ -193,7 +199,7 @@ const theme = createMuiTheme({
         },
         MuiInputLabel: {
             root: {
-                fontSize: 18,
+                fontSize: pxToRem(18),
                 color: '#212529',
                 '&.Mui-focused': {
                     color: '#212529'

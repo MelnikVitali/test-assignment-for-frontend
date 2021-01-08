@@ -28,7 +28,7 @@ import bannerWebpImage1024_3x from '../../../assets/bannerPhoto/banner-photo1024
 
 import useStyles from './styles';
 
-const ResponsiveBanner = React.memo(() => {
+const ResponsiveBanner = () => {
     const classes = useStyles();
 
     return (
@@ -115,6 +115,6 @@ const ResponsiveBanner = React.memo(() => {
             </picture >
         </ >
     );
-});
+};
 
 export default ResponsiveBanner;

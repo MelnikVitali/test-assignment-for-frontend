@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
         },
     },
     boxContent: {
-        zIndex: 2
+        zIndex: theme.testAssignmentBlockZIndex
     },
     title: {
         padding: `0 ${pxToRem(11)}`,

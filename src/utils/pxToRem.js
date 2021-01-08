@@ -1,3 +1,3 @@
 export const pxToRem = (value) => {
-    return `${value / 16}rem`;
+    return value ? `${value / 16}rem` : 0;
 };

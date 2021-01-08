@@ -8,7 +8,7 @@ import ResponsiveBanner from './ResponsiveBanner';
 
 import useStyles from './styles';
 
-const TestAssignment = React.memo(() => {
+const TestAssignment = () => {
     const classes = useStyles();
 
     const { subtitleMobile, subtitleTabletUp } = subtitleInH1;
@@ -26,22 +26,25 @@ const TestAssignment = React.memo(() => {
                     Test assignment for Frontend Developer
                     position
                 </Typography >
+
                 <Hidden smDown >
                     <Typography component='p' variant='subtitle1' className={classes.subtitle} >
                         {subtitleTabletUp}
                     </Typography >
                 </Hidden >
+
                 <Hidden mdUp >
                     <Typography component='p' variant='subtitle1' className={classes.subtitle} >
                         {subtitleMobile}
                     </Typography >
                 </Hidden >
+
                 <Button href='#sign-up' variant='contained' color='primary' className={classes.btn} >
                     Sing up now
                 </Button >
             </Box >
         </Container >
     );
-});
+};
 
 export default TestAssignment;

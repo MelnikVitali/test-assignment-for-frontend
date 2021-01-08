@@ -6,7 +6,7 @@ import FormRegister from './FormRegister';
 
 import useStyles from './styles';
 
-const RegisterToGet = React.memo(() => {
+const RegisterToGet = () => {
     const classes = useStyles();
 
     return (
@@ -30,9 +30,10 @@ const RegisterToGet = React.memo(() => {
             >
                 Attention! After successful registration and alert, update the list of users in the block from the top
             </Typography >
+
             <FormRegister />
         </Container >
     );
-});
+};
 
 export default RegisterToGet;

@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('lg')]: {
             paddingTop: pxToRem(23),
         },
-        letterSpacing: -0.1,
+        letterSpacing: pxToRem(-0.1),
         '&:last-child': {
             paddingBottom: pxToRem(3)
         }
@@ -36,4 +36,3 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default useStyles;
-

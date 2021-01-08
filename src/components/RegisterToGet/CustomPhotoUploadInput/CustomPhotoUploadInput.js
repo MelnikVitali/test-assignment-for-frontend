@@ -4,7 +4,7 @@ import { Box, Tooltip } from '@material-ui/core';
 
 import useStyles from './styles';
 
-const CustomPhotoUploadInput = ({ selectedPhoto, error, value, onChange, onBlur, ...fieldProps }) => {
+const CustomPhotoUploadInput = React.memo(({ selectedPhoto, error, value, onChange, onBlur, ...fieldProps }) => {
     const classes = useStyles();
 
     return (
@@ -33,6 +33,6 @@ const CustomPhotoUploadInput = ({ selectedPhoto, error, value, onChange, onBlur,
             </Tooltip >
         </Box >
     );
-};
+});
 
 export default CustomPhotoUploadInput;

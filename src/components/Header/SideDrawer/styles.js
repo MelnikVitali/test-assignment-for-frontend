@@ -4,7 +4,6 @@ import { pxToRem } from '../../../utils/pxToRem';
 
 import menuIcon from '../../../assets/menu-icon.svg';
 
-
 const useStyles = makeStyles(theme => ({
     drawerContainer: {
         width: pxToRem(290),
@@ -13,7 +12,7 @@ const useStyles = makeStyles(theme => ({
         height: pxToRem(40),
         display: 'flex',
         alignItems: 'center',
-        marginLeft: pxToRem(14),
+        paddingLeft: pxToRem(14),
         paddingTop: pxToRem(1),
         [theme.breakpoints.up('md')]: {
             height: pxToRem(60),

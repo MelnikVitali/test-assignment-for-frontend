@@ -1,6 +1,8 @@
 import React from 'react';
+
 import FormControl from '@material-ui/core/FormControl';
 import { FormControlLabel, FormLabel, RadioGroup } from '@material-ui/core';
+
 import CustomRadio from '../CustomRadio/CustomRadio';
 
 import useStyles from './styles';
@@ -12,10 +14,15 @@ const SelectYourPosition = React.memo(({ positions, value, onChange }) => {
         <>
             {positions && positions.length > 0 &&
             <FormControl component="fieldset" className={classes.root} >
-                <FormLabel className={classes.label} color='secondary' component="legend" >Select your
-                    position</FormLabel >
-                <RadioGroup className={classes.formControl} defaultValue={positions[0].name} aria-label="position"
-                            name="customized-radios" >
+                <FormLabel className={classes.label} color='secondary' component="legend" >
+                    Select your position
+                </FormLabel >
+
+                <RadioGroup className={classes.formControl}
+                            defaultValue={positions[0].name}
+                            aria-label="position"
+                            name="customized-radios"
+                >
                     {positions.map((position) => {
                         return <FormControlLabel
                             key={position.id}
