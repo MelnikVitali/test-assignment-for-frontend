@@ -24,6 +24,7 @@ const User = React.memo(({ user }) => {
                     className={classes.userPhoto}
                     src={user.photo}
                     alt={user.name}
+                    loading="lazy"
                     onError={e => {
                         e.target.src = defaultAvatar;
                     }}

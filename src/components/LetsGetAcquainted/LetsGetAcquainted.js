@@ -23,7 +23,7 @@ const LetsGetAcquainted = () => {
                     item
                     data-aos="zoom-in"
                     className={classes.wrapperImg} >
-                    <img src={manLaptopImg} alt='man with laptop' className={classes.img} />
+                    <img src={manLaptopImg} alt='man with laptop' className={classes.img} loading="lazy" />
                 </Grid >
 
                 <Grid item className={classes.gridItemContent} >

@@ -179,6 +179,7 @@ const FormRegister = () => {
                     data-aos="zoom-in"
                     alt={selectedPhoto.name}
                     src={selectedPhoto.url}
+                    loading="lazy"
                     className={classes.previewAvatar}
                 />}
 

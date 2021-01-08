@@ -47,7 +47,7 @@ const SideDrawer = React.memo(({ window }) => {
                   href="#"
                   className={classes.logoLink}
             >
-                <img src={logo} alt="TESTTASK" className={classes.logoImg} />
+                <img src={logo} alt="TESTTASK" className={classes.logoImg} loading="lazy" />
             </Link >
 
             <Divider />
