@@ -44,7 +44,7 @@ const SideDrawer = React.memo(({ window }) => {
             onKeyDown={toggleDrawer(false)}
         >
             <Link component='a'
-                  href="#"
+                  href='#'
                   className={classes.logoLink}
             >
                 <img src={logo} alt="TESTTASK" className={classes.logoImg} loading="lazy" />
@@ -52,60 +52,62 @@ const SideDrawer = React.memo(({ window }) => {
 
             <Divider />
 
-            <List component="nav" className={classes.navList} >
-                {firstDrawerList.map(({ title, path }) => (
-                    <ListItem component='li'
-                              key={title}
-                              button
-                              className={classes.listItem}
-                    >
-                        <Link
-                            href={path}
-                            color='inherit'
+            <Box component='nav' aria-label='main navigation' >
+                <List component='ul' className={classes.navList} >
+                    {firstDrawerList.map(({ title, path }) => (
+                        <ListItem component='li'
+                                  key={title}
+                                  button
+                                  className={classes.listItem}
                         >
-                            {title}
-                        </Link >
-                    </ListItem >
-                ))}
-            </List >
+                            <Link
+                                href={path}
+                                color='inherit'
+                            >
+                                {title}
+                            </Link >
+                        </ListItem >
+                    ))}
+                </List >
 
-            <Divider />
+                <Divider />
 
-            <List component="nav" className={classes.navList} >
-                {secondDrawerList.map(({ title, path }) => (
-                    <ListItem component='li'
-                              key={title}
-                              button
-                              className={classes.listItem}
-                    >
-                        <Link
-                            href={path}
-                            color='inherit'
+                <List component='ul' className={classes.navList} >
+                    {secondDrawerList.map(({ title, path }) => (
+                        <ListItem component='li'
+                                  key={title}
+                                  button
+                                  className={classes.listItem}
                         >
-                            {title}
-                        </Link >
-                    </ListItem >
-                ))}
-            </List >
+                            <Link
+                                href={path}
+                                color='inherit'
+                            >
+                                {title}
+                            </Link >
+                        </ListItem >
+                    ))}
+                </List >
 
-            <Divider />
+                <Divider />
 
-            <List component="nav" className={classes.navList} >
-                {thirdDrawerList.map(({ title, path }) => (
-                    <ListItem component='li'
-                              button
-                              key={title}
-                              className={classes.listItem}
-                    >
-                        <Link
-                            href={path}
-                            color='inherit'
+                <List component='ul' className={classes.navList} >
+                    {thirdDrawerList.map(({ title, path }) => (
+                        <ListItem component='li'
+                                  button
+                                  key={title}
+                                  className={classes.listItem}
                         >
-                            {title}
-                        </Link >
-                    </ListItem >
-                ))}
-            </List >
+                            <Link
+                                href={path}
+                                color='inherit'
+                            >
+                                {title}
+                            </Link >
+                        </ListItem >
+                    ))}
+                </List >
+            </Box >
         </div >
     );
 
