@@ -67,6 +67,12 @@ Author: Vitalii Melnyk
 - [Link 4 Necessary sources](https://drive.google.com/drive/folders/1I-1EiTdo87flddzGjIFgnFVhWGKr-ybC)
 
 -------------------------------------------
+### Deploy to Git Hub pages
+
+#### add to package.json property:
+- `"homepage": "http://melnikvitali.github.io/test-assignment-for-frontend"`
+
+-------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
