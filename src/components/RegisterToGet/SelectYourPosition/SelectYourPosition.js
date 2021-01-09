@@ -12,14 +12,13 @@ const SelectYourPosition = React.memo(({ positions, value, onChange }) => {
 
     return (
         <>
-            {positions && positions.length > 0 &&
             <FormControl component="fieldset" className={classes.root} >
                 <FormLabel className={classes.label} color='secondary' component="legend" >
                     Select your position
                 </FormLabel >
 
                 <RadioGroup className={classes.formControl}
-                            defaultValue={positions[0].name}
+                            defaultValue={positions[0].id}
                             aria-label="position"
                             name="customized-radios"
                 >
@@ -35,7 +34,7 @@ const SelectYourPosition = React.memo(({ positions, value, onChange }) => {
                             control={<CustomRadio />} label={position.name} />;
                     })}
                 </RadioGroup >
-            </FormControl >}
+            </FormControl >
         </ >
     );
 
