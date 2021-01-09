@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { Box, Button, CircularProgress, Container, Grid, Typography } from '@material-ui/core';
@@ -18,18 +18,25 @@ const OurCheerfulUsers = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    const { users, total_pages, nextUrl } = useSelector(store => store.usersReducer, shallowEqual);
+    const { users, totalPages, nextUrl } = useSelector(store => store.usersReducer, shallowEqual);
     const isFetching = useSelector(store => store.toggleIsFetchingReducer.isFetching);
 
+    const getUsers = useCallback(
+        () => {
+            const url = window.innerWidth < MOBILE_MAX_WIDTH ?
+                APIUrls.getUsersMobileStartPage :
+                APIUrls.getUsersTabletStartPage;
+
+            dispatch(clearErrors());
+
+            dispatch(getFirstUsers(url));
+        },
+        [ dispatch ]
+    );
+
     useEffect(() => {
-        const url = window.innerWidth < MOBILE_MAX_WIDTH ?
-            APIUrls.getUsersMobileStartPage :
-            APIUrls.getUsersTabletStartPage;
-
-        dispatch(clearErrors());
-
-        dispatch(getFirstUsers(url));
-    }, [ dispatch ]);
+        getUsers();
+    }, [ getUsers ]);
 
     const handleNextUsersList = () => {
         dispatch(getNextUsers(nextUrl));
@@ -55,19 +62,19 @@ const OurCheerfulUsers = () => {
                 Attention! Sorting users by registration date
             </Typography >
 
-            <Grid
+            {users && users.length > 0 && <Grid
                 container
                 justify="center"
                 className={classes.usersList}
             >
-                {users && users.length > 0 && users.map(user => {
+                {users.map(user => {
                         return <User key={user.id} user={user} />;
                     }
                 )}
-            </Grid >
+            </Grid >}
 
             <Box component='div' className={classes.wrapperButton} >
-                {nextUrl && (new URL(nextUrl).searchParams.get('page') <= total_pages) &&
+                {nextUrl && (new URL(nextUrl).searchParams.get('page') <= totalPages) &&
                 <Button
                     variant='contained'
                     color='primary'

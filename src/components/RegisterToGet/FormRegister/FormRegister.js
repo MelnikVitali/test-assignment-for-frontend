@@ -31,6 +31,8 @@ const FormRegister = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
+    // console.log('Rerender Form register');
+
     const { positions, token } = useSelector(state => state.registrationReducer, shallowEqual);
     const isFetching = useSelector(store => store.toggleIsFetchingReducer.isFetching);
 

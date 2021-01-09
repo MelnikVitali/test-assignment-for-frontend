@@ -2,6 +2,7 @@ import * as actions from '../actions/types';
 
 const initialState = {
     nextUrl: '',
+    totalPages: 0
 };
 
 export default (state = initialState, action) => {
@@ -10,7 +11,8 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 ...action.payload,
-                nextUrl: action.payload.links.next_url
+                nextUrl: action.payload.links.next_url,
+                totalPages: action.payload.total_pages
             };
 
         case actions.GET_NEXT_USERS:
@@ -20,6 +22,7 @@ export default (state = initialState, action) => {
                 page: action.payload.page,
                 links: action.payload.links,
                 nextUrl: action.payload.links.next_url,
+                totalPages: action.payload.total_pages,
                 users: [ ...state.users, ...action.payload.users ],
             };
 
