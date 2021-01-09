@@ -12,15 +12,15 @@ const urlGetUsers = window.innerWidth < MOBILE_MAX_WIDTH ?
     APIUrls.getUsersMobileStartPage :
     APIUrls.getUsersTabletStartPage;
 
-const axiosGetRegister = (url, actionsType, keyData) => async dispatch => {
+export const getPositions = () => async dispatch => {
     try {
         dispatch(toggleIsFetching(true));
 
-        const res = await axios.get(url);
+        const res = await axios.get(APIUrls.getPositions);
 
         dispatch(toggleIsFetching(false));
 
-        return dispatch({ type: actionsType, payload: res.data[keyData] });
+        return dispatch({ type: actions.GET_POSITIONS, payload: res.data.positions });
 
     } catch (error) {
         dispatch(toggleIsFetching(false));
@@ -34,12 +34,13 @@ const axiosGetRegister = (url, actionsType, keyData) => async dispatch => {
     }
 };
 
-export const getPositions = () => axiosGetRegister(APIUrls.getPositions, actions.GET_POSITIONS, 'positions');
-export const getToken = () => axiosGetRegister(APIUrls.getToken, actions.GET_TOKEN, 'token');
-
-export const addNewUser = (body, config, resetForm, setSelectedPhoto, initialState) => async (dispatch) => {
+export const addNewUser = (body, resetForm, setSelectedPhoto, initialState) => async (dispatch) => {
     try {
         dispatch(toggleIsFetching(true));
+
+        const resToken = await axios.get(APIUrls.getToken);
+
+        const config = { headers: { 'Token': `${resToken.data.token}` } };
 
         const res = await axios.post(APIUrls.addNewUser, body, config);
 

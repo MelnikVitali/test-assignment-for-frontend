@@ -1,16 +1,12 @@
 import * as actions from '../actions/types';
 
 const initialState = {
-    token: '',
     positions: [],
     isOpenModal: false
 };
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case actions.GET_TOKEN:
-            return { ...state, token: action.payload };
-
         case actions.GET_POSITIONS:
             return {
                 ...state,
