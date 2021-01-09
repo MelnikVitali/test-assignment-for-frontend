@@ -40,7 +40,7 @@ const Header = () => {
                 <Hidden mdDown >
                     <List
                         component="nav"
-                        aria-labelledby="main navigation"
+                        aria-label="main navigation"
                         className={classes.navList}
                     >
                         {navLinks.map(({ title, path }, index) => (
