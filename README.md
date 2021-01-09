@@ -61,7 +61,7 @@ Author: Vitalii Melnyk
       AAAAAA.
 
 - [Link 1 Test task for frontend developer position](https://drive.google.com/file/d/1cUo-vbZP0C2YtRF3L9667BlXoqaZdACl/view)
-- [Link 2 Style guide)](http://view.maquetter.com/rkymlp/0101)
+- [Link 2 Style guide](http://view.maquetter.com/rkymlp/0101)
 - [Link 3 Mockups](http://view.maquetter.com/rkymlp/0201)
 - [Link 4 Necessary sources](https://drive.google.com/drive/folders/1I-1EiTdo87flddzGjIFgnFVhWGKr-ybC)
 
