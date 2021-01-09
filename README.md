@@ -1,6 +1,7 @@
 # Test task for frontend
 
 [Deployed App on Heroku](https://test-assignment-for-frontend.herokuapp.com/)
+[Deployed App on GitHub pages](http://melnikvitali.github.io/test-assignment-for-frontend)
 
 Author: Vitalii Melnyk
 
