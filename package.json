@@ -7,7 +7,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/MelnikVitali/abz_agency_task"
+    "url": "https://github.com/MelnikVitali/test-assignment-for-frontend"
   },
   "scripts": {
     "start": "react-scripts start",
