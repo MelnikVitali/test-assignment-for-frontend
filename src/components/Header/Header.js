@@ -6,7 +6,9 @@ import {
     Toolbar,
     List,
     Hidden,
-    Link, ListItem
+    Link,
+    ListItem,
+    Box
 } from '@material-ui/core';
 
 import logo from '../../assets/logo.svg';
@@ -38,29 +40,31 @@ const Header = () => {
                 </Link >
 
                 <Hidden mdDown >
-                    <List
-                        component="nav"
-                        aria-label="main navigation"
-                        className={classes.navList}
-                    >
-                        {navLinks.map(({ title, path }, index) => (
-                            <ListItem
-                                component='li'
-                                key={title}
-                                className={[
-                                    classes.listItem,
-                                    selectedIndex === index ? classes.selected : ''
-                                ].join(' ')} >
-                                <Link
-                                    href={path}
-                                    color='inherit'
-                                    onClick={() => setSelectedIndex(index)}
-                                >
-                                    {title}
-                                </Link >
-                            </ListItem >
-                        ))}
-                    </List >
+                    <Box component='nav' >
+                        <List
+                            component="ul"
+                            aria-label="main navigation"
+                            className={classes.navList}
+                        >
+                            {navLinks.map(({ title, path }, index) => (
+                                <ListItem
+                                    component='li'
+                                    key={title}
+                                    className={[
+                                        classes.listItem,
+                                        selectedIndex === index ? classes.selected : ''
+                                    ].join(' ')} >
+                                    <Link
+                                        href={path}
+                                        color='inherit'
+                                        onClick={() => setSelectedIndex(index)}
+                                    >
+                                        {title}
+                                    </Link >
+                                </ListItem >
+                            ))}
+                        </List >
+                    </Box >
                 </Hidden >
 
                 <Hidden lgUp >
